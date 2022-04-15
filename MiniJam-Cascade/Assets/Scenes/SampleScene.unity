@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -666,6 +666,7 @@ GameObject:
   - component: {fileID: 1894929800}
   - component: {fileID: 1894929799}
   - component: {fileID: 1894929798}
+  - component: {fileID: 1894929801}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -706,7 +707,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 57.2
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -731,13 +732,26 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894929797}
-  m_LocalRotation: {x: 0.14953533, y: 0, z: 0, w: 0.9887564}
+  m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
   m_LocalPosition: {x: 0, y: 2.99, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2073850071}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 17.2, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
+--- !u!114 &1894929801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894929797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc72b64704bffa949a39594a0a74d034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBody: {fileID: 2073850071}
 --- !u!1 &2041340585
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,8 +876,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 4.89
-  m_Radius: 0.7
+  m_Height: 7
+  m_Radius: 1.2
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -877,7 +891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073850069}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.54, z: 0}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1894929800}
@@ -898,13 +912,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e107853c474e95a40b6ed01d1604cd56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  walkSpeed: 5
-  runSpeed: 20
-  JumpHeight: 1.7
-  isGrounded: 0
-  groundCheckDistance: 3.62
+  walkSpeed: 15
+  runSpeed: 22.5
+  JumpHeight: 3
+  groundCheckDistance: 3.58
   groundMask:
     serializedVersion: 2
     m_Bits: 8
-  gravity: -16
+  gravity: -19
