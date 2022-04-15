@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 15f;
     Rigidbody rb;
     public float jumpHeight = 7.5f;
+    public Animator Player;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded() && Input.GetButton("Jump"))
         {
-            Debug.Log(transform.position.y);
             rb.velocity = Vector3.up * jumpHeight;
         }
         Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
