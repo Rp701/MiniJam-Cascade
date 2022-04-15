@@ -4,31 +4,102 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float movementSpeed = 15f;
-    Rigidbody rb;
-    public float jumpHeight = 7.5f;
-    public Animator Player;
+    //Variables
+    public float moveSpeed;
+    public float walkSpeed;
+    public float runSpeed;
+    public float JumpHeight;
 
-    // Start is called before the first frame update
-    void Start()
+    private Vector3 moveDirection;
+    private Vector3 velocity;
+
+    public bool isGrounded;
+    public float groundCheckDistance;
+    public LayerMask groundMask;
+    public float gravity;
+
+    //References
+
+    private CharacterController controller;
+    public Animator anim;
+
+
+    private void Start()
     {
-        Debug.Log("Code Works");
-        rb = GetComponent<Rigidbody>();
+        controller = GetComponent <CharacterController>();
+        anim = GetComponentInChildren<Animator>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        if (isGrounded() && Input.GetButton("Jump"))
+        Move();
+    }
+
+    void Move()
+    {
+        isGrounded = Physics.CheckSphere(transform.position, groundCheckDistance, groundMask);
+
+        if(isGrounded && velocity.y < 0)
         {
-            rb.velocity = Vector3.up * jumpHeight;
+            velocity.y = -2f;
         }
-        Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-        rb.MovePosition(transform.position + input * Time.deltaTime * movementSpeed);
+        float moveZ = Input.GetAxis("Vertical");
+
+        moveDirection = new Vector3 (0, 0, moveZ);
+
+        if(isGrounded)
+        {
+            if(moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
+            {
+                //Walk
+                Walk();
+            }
+            else if(moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
+            {
+                //Run
+                Run();
+            }
+            else if(moveDirection == Vector3.zero)
+            {
+                //Idle
+                Idle();
+            }  
+            moveDirection *= moveSpeed; 
+
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+            }
+        }
+
+        controller.Move(moveDirection * Time.deltaTime);
+
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
+
     }
 
-    public bool isGrounded()
+    void Idle()
     {
-        return Physics.Raycast(transform.position, Vector3.down, 1.1f);
+        anim.SetFloat("Speed", 0f);
+    }
+
+    void Walk()
+    {
+        moveSpeed = walkSpeed;
+        anim.SetFloat("Speed", 0.5f);
+    }
+
+    void Run()
+    {
+        moveSpeed = runSpeed;
+        anim.SetFloat("Speed", 1f);
+    }
+
+    void Jump()
+    {
+        velocity.y = Mathf.Sqrt(JumpHeight * -2 * gravity);
     }
 }
+

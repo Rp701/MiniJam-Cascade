@@ -111,8 +111,8 @@ MonoBehaviour:
         guid: afe01baa1cfa3542b003eaa003c4b17e
       Path: Events/Default Work Unit/Play_base_per_movimento_anni_70
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 62.608845
+      minDuration: 62.608845
   RtpcWwu:
   - PhysicalPath: Game Parameters/Default Work Unit.wwu
     PathAndIcons:
