@@ -21,13 +21,13 @@ public class PlayerMovement : MonoBehaviour
     //References
 
     private CharacterController controller;
-    public Animator anim;
+    
 
 
     private void Start()
     {
         controller = GetComponent <CharacterController>();
-        anim = GetComponentInChildren<Animator>();
+        ;
     }
 
     void Update()
@@ -82,19 +82,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Idle()
     {
-        anim.SetFloat("Speed", 0f);
+        
     }
 
     void Walk()
     {
         moveSpeed = walkSpeed;
-        anim.SetFloat("Speed", 0.5f);
+        
     }
 
     void Run()
     {
         moveSpeed = runSpeed;
-        anim.SetFloat("Speed", 1f);
+        
     }
 
     void Jump()
