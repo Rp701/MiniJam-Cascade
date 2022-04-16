@@ -7,6 +7,7 @@ public class PickupItem : MonoBehaviour
     public string itemName;
     public GameObject inventory;
     public GameObject pressFText;
+    public GameObject placeHolder;
     private bool inRange;
     Inventory inventoryScript;
 
@@ -16,6 +17,7 @@ public class PickupItem : MonoBehaviour
         pressFText = GameObject.Find("Canvas").transform.GetChild(0).gameObject;
         inventoryScript = inventory.GetComponent<Inventory>();
         itemName = gameObject.name;
+        placeHolder = GameObject.Find("HandHolder");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -48,8 +50,9 @@ public class PickupItem : MonoBehaviour
                 GetComponent<Inventory>().shovelAcquired = true;
             }
 
-            Debug.Log(gameObject.name);
-            Destroy(gameObject);
+            gameObject.transform.parent = placeHolder.transform;
+            gameObject.transform.position = placeHolder.transform.position;
+            gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 

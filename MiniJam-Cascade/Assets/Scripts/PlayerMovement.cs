@@ -46,21 +46,24 @@ public class PlayerMovement : MonoBehaviour
 
         moveDirection = transform.right * moveX + transform.forward * moveZ;
 
+        if(isGrounded)
+        {
+            if(moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
+            {
+                //Walk
+                Walk();
+            }
 
-        if(moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
-        {
-            //Walk
-            Walk();
-        }
-        else if(moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
-        {
-            //Run
-            Run();
-        }
+            else if(moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
+            {
+                //Run
+                Run();
+            }
 
-        if(Input.GetButton("Jump") && isGrounded)
-        {
-            Jump();
+            if(Input.GetButton("Jump") && isGrounded)
+            {
+                Jump();
+            }
         }
 
         moveDirection *= moveSpeed;
