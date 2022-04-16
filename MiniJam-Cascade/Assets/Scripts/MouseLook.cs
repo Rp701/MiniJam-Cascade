@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    float mouseSensitivity = 80f;
+    public float mouseSensitivity;
 
     public Transform playerBody;
 
@@ -13,6 +13,7 @@ public class MouseLook : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        mouseSensitivity = 80f;
         xRotation = 0;
     }
 
