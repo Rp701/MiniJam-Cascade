@@ -21,8 +21,6 @@ public class PlayerMovement : MonoBehaviour
     //References
 
     private CharacterController controller;
-    
-
 
     private void Start()
     {
