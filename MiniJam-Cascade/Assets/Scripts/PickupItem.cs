@@ -8,7 +8,16 @@ public class PickupItem : MonoBehaviour
     public GameObject inventory;
     public GameObject pressFText;
     private bool inRange;
-    
+    Inventory inventoryScript;
+
+    private void Start()
+    {
+        inventory = GameObject.FindGameObjectWithTag("Player");
+        pressFText = GameObject.Find("Canvas").transform.GetChild(0).gameObject;
+        inventoryScript = inventory.GetComponent<Inventory>();
+        itemName = gameObject.name;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
@@ -24,15 +33,23 @@ public class PickupItem : MonoBehaviour
         {
             pressFText.SetActive(false);
 
-            if (itemName == "Pickaxe")
+            if (itemName == "Pickaxe Handle")
             {
-                inventory.GetComponent<Inventory>().pickaxeAcquired = true;
+                inventoryScript.pickaxeHandleAcquired = true;
+
+                if (inventoryScript.pickaxeheadAcquired)
+                {
+                    Debug.Log("You can craft the pickaxe");
+                }
             }
 
             if (itemName == "Shovel")
             {
                 GetComponent<Inventory>().shovelAcquired = true;
             }
+
+            Debug.Log(gameObject.name);
+            Destroy(gameObject);
         }
     }
 

@@ -383,11 +383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f025e8f06770b9409eca2299d8099a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemInteractionUIElement: {fileID: 0}
-  itemName: 
-  interactTextUI: {fileID: 0}
-  itemNameTextUI: {fileID: 0}
-  playerInRange: 0
 --- !u!1 &249055798
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,14 +649,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 388083934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f025e8f06770b9409eca2299d8099a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 90fa563e2f2a2fe43b6d9873a0af9a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemInteractionUIElement: {fileID: 5023350660255108969}
-  itemName: Pickaxe Handle
-  interactTextUI: {fileID: 5023350661147372548}
-  itemNameTextUI: {fileID: 5023350661312931607}
-  playerInRange: 0
+  itemName: 
+  inventory: {fileID: 0}
+  pressFText: {fileID: 0}
 --- !u!1 &595519951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,11 +1678,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c9d26af343fd9a4286b6915d2a9e6d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToUse: {fileID: 5023350661293231434}
-  fadeIn: 0
-  fadeOnStart: 1
-  timeMultiplier: 1
-  FadeIncomplete: 0
 --- !u!222 &5023350661293231433
 CanvasRenderer:
   m_ObjectHideFlags: 0

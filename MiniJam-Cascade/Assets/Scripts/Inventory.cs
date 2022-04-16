@@ -5,9 +5,15 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public GameObject pickaxe;
-    public bool pickaxeAcquired;
+    public bool pickaxeHandleAcquired;
     public GameObject shovel;
     public bool shovelAcquired;
     public GameObject pickaxehead;
     public bool pickaxeheadAcquired;
+
+
+    private void Update()
+    {
+
+    }
 }
