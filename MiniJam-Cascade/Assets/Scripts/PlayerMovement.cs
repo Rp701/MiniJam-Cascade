@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 Jump();
             }
+
         }
 
         moveDirection *= moveSpeed;
