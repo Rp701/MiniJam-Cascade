@@ -31482,7 +31482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1828392239}
   m_Layer: 0
-  m_Name: Rivver
+  m_Name: River
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

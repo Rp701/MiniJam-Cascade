@@ -7,6 +7,7 @@ public class PickupItem : MonoBehaviour
     public string itemName;
     public GameObject inventory;
     public GameObject pressFText;
+    public GameObject pressFToLoot;
     public GameObject placeHolder;
     private bool inRange;
     Inventory inventoryScript;
@@ -25,75 +26,91 @@ public class PickupItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(gameObject.tag != "DeadBody")
         {
-            pressFText.SetActive(true);
+            if (other.gameObject.tag == "Player")
+            {
+                pressFText.SetActive(true);
+                inRange = true;
+            }
+        } else
+        {
+            pressFToLoot.SetActive(true);
             inRange = true;
         }
+        
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F) && inRange == true)
         {
-            pressFText.SetActive(false);
-
-            inRange = false;
-        
-
-            if(itemName == "Pickaxe")
+            if (pressFToLoot.activeInHierarchy)
             {
-                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                slotScript.SetStoredObject(gameObject);
-            } 
-            else if (itemName == "Sword")
-            {
-                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                slotScript.SetStoredObject(gameObject);
-            } 
-            else if (itemName == "Shovel")
-            {
-                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                slotScript.SetStoredObject(gameObject);
-            } 
-            else if (itemName == "Lighter")
-            {
-                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                slotScript.SetStoredObject(gameObject);
-            } 
-            else if (itemName == "Torch")
-            {
-                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                slotScript.SetStoredObject(gameObject);
-            } 
-            else if (itemName == "Drill")
-            {
-                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                slotScript.SetStoredObject(gameObject);
-            } 
-            else if (itemName == "Wooden Plank")
-            {
-                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                slotScript.SetStoredObject(gameObject);
-            }
+                pressFToLoot.SetActive(false);
 
-            if(placeHolder.transform.childCount != 0)
+            } else if(pressFText.activeInHierarchy)
             {
-                Destroy(placeHolder.transform.GetChild(0).gameObject);
+                pressFText.SetActive(false);
 
-                Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
+                inRange = false;
 
-                Destroy(gameObject);
 
-                placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
+                if (itemName == "Pickaxe")
+                {
+                    slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                    slotScript.SetStoredObject(gameObject);
+                }
+                else if (itemName == "Sword")
+                {
+                    slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                    slotScript.SetStoredObject(gameObject);
+                }
+                else if (itemName == "Shovel")
+                {
+                    slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                    slotScript.SetStoredObject(gameObject);
+                }
+                else if (itemName == "Lighter")
+                {
+                    slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                    slotScript.SetStoredObject(gameObject);
+                }
+                else if (itemName == "Torch")
+                {
+                    slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                    slotScript.SetStoredObject(gameObject);
+                }
+                else if (itemName == "Drill")
+                {
+                    slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                    slotScript.SetStoredObject(gameObject);
+                }
+                else if (itemName == "Wooden Plank")
+                {
+                    slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                    slotScript.SetStoredObject(gameObject);
+                }
 
-            } else
-            {
-                Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
+                if (placeHolder.transform.childCount != 0)
+                {
+                    Destroy(placeHolder.transform.GetChild(0).gameObject);
 
-                Destroy(gameObject);
+                    Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
 
-                placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
+                    Destroy(gameObject);
+
+                    placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
+
+                }
+                else
+                {
+                    Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
+
+                    Destroy(gameObject);
+
+                    placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
+                }
             }
             
         }
