@@ -10,6 +10,8 @@ public class PickupItem : MonoBehaviour
     public GameObject placeHolder;
     private bool inRange;
     Inventory inventoryScript;
+    GameObject hotbarSlots;
+    Slot slotScript;
 
     private void Start()
     {
@@ -18,6 +20,7 @@ public class PickupItem : MonoBehaviour
         inventoryScript = inventory.GetComponent<Inventory>();
         itemName = gameObject.name;
         placeHolder = GameObject.Find("HandHolder");
+        hotbarSlots = GameObject.Find("Slots");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,24 +38,64 @@ public class PickupItem : MonoBehaviour
         {
             pressFText.SetActive(false);
 
-            if (itemName == "Pickaxe Handle")
-            {
-                inventoryScript.pickaxeHandleAcquired = true;
+            inRange = false;
+        
 
-                if (inventoryScript.pickaxeheadAcquired)
-                {
-                    Debug.Log("You can craft the pickaxe");
-                }
+            if(itemName == "Pickaxe")
+            {
+                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                slotScript.SetStoredObject(gameObject);
+            } 
+            else if (itemName == "Sword")
+            {
+                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                slotScript.SetStoredObject(gameObject);
+            } 
+            else if (itemName == "Shovel")
+            {
+                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                slotScript.SetStoredObject(gameObject);
+            } 
+            else if (itemName == "Lighter")
+            {
+                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                slotScript.SetStoredObject(gameObject);
+            } 
+            else if (itemName == "Torch")
+            {
+                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                slotScript.SetStoredObject(gameObject);
+            } 
+            else if (itemName == "Drill")
+            {
+                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                slotScript.SetStoredObject(gameObject);
+            } 
+            else if (itemName == "Wooden Plank")
+            {
+                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                slotScript.SetStoredObject(gameObject);
             }
 
-            if (itemName == "Shovel")
+            if(placeHolder.transform.childCount != 0)
             {
-                GetComponent<Inventory>().shovelAcquired = true;
-            }
+                Destroy(placeHolder.transform.GetChild(0).gameObject);
 
-            gameObject.transform.parent = placeHolder.transform;
-            gameObject.transform.position = placeHolder.transform.position;
-            gameObject.GetComponent<BoxCollider>().enabled = false;
+                Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
+
+                Destroy(gameObject);
+
+                placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
+
+            } else
+            {
+                Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
+
+                Destroy(gameObject);
+
+                placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
+            }
+            
         }
     }
 
