@@ -7,6 +7,7 @@ public class Hotbar : MonoBehaviour
     GameObject slot;
     public GameObject slots;
     Slot slotScript;
+    int childrenLength;
 
     GameObject itemHolder;
 
@@ -14,6 +15,8 @@ public class Hotbar : MonoBehaviour
     void Start()
     {
         itemHolder = GameObject.Find("HandHolder").gameObject;
+        childrenLength = itemHolder.transform.childCount;
+
 
         slots = gameObject.transform.Find("Slots").gameObject;
     }
@@ -55,17 +58,16 @@ public class Hotbar : MonoBehaviour
         {
             slot = slots.transform.GetChild(slotIndex).gameObject;
             slotScript = slot.GetComponent<Slot>();
+
             if (slotScript.storedObject != null)
             {
-                if (itemHolder.transform.childCount != 0)
-                {
                     Destroy(itemHolder.transform.GetChild(0).gameObject);
+
                     Instantiate(slotScript.slotItemPrefab, itemHolder.transform, false);
 
                     itemHolder.transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
                 }
             }
         }
-
     }
-}
+

@@ -37,6 +37,8 @@ public class PickupItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && inRange == true)
         {
             pressFText.SetActive(false);
+
+            inRange = false;
         
 
             if(itemName == "Pickaxe")
@@ -75,27 +77,25 @@ public class PickupItem : MonoBehaviour
                 slotScript.SetStoredObject(gameObject);
             }
 
-
-            if (placeHolder.transform.childCount != 0)
+            if(placeHolder.transform.childCount != 0)
             {
+                Destroy(placeHolder.transform.GetChild(0).gameObject);
+
+                Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
+
                 Destroy(gameObject);
-            }
-            else
+
+                placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
+
+            } else
             {
-                if (gameObject.tag == "Item")
-                {
-                    gameObject.transform.parent = placeHolder.transform;
-                    gameObject.transform.position = placeHolder.transform.position;
-                    inRange = false;
-                    gameObject.GetComponent<BoxCollider>().enabled = false;
-                }
+                Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
 
-                else
-                {
-                    Destroy(gameObject);
+                Destroy(gameObject);
 
-                }
+                placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
             }
+            
         }
     }
 
