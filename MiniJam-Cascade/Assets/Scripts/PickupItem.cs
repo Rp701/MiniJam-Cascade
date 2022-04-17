@@ -9,97 +9,91 @@ public class PickupItem : MonoBehaviour
     public GameObject pressFText;
     public GameObject pressFToLoot;
     public GameObject placeHolder;
+    public GameObject inventoryCanvas;
     private bool inRange;
     Inventory inventoryScript;
     GameObject hotbarSlots;
+    int slotAmount;
     Slot slotScript;
 
     private void Start()
     {
+        inventoryCanvas = GameObject.Find("InventoryCanvas");
         inventory = GameObject.FindGameObjectWithTag("Player");
-        pressFText = GameObject.Find("Canvas").transform.GetChild(0).gameObject;
-        pressFToLoot = GameObject.Find("Canvas").transform.Find("PressFToLoot").gameObject;
+        pressFText = inventoryCanvas.transform.Find("PressFText").gameObject;
+        pressFToLoot = inventoryCanvas.transform.Find("PressFToLoot").gameObject;
         inventoryScript = inventory.GetComponent<Inventory>();
         itemName = gameObject.name;
         placeHolder = GameObject.Find("HandHolder");
         hotbarSlots = GameObject.Find("Slots");
+        slotAmount = hotbarSlots.transform.childCount;
+
+        for (int i = 0; i < slotAmount; i++)
+        {
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(gameObject.tag != "DeadBody")
-        {
             if (other.gameObject.tag == "Player")
             {
                 pressFText.SetActive(true);
                 inRange = true;
             }
-        } else
-        {
-            pressFToLoot.SetActive(true);
-            inRange = true;
-        }
-        
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F) && inRange == true)
         {
-            if (pressFToLoot.activeInHierarchy)
+            pressFText.SetActive(false);
+
+            inRange = false;
+
+
+            if (itemName == "Pickaxe")
             {
-                pressFToLoot.SetActive(false);
-
-            } else if(pressFText.activeInHierarchy)
+                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                slotScript.SetStoredObject(gameObject);
+                Debug.Log("Pickaxe");
+            }
+            else if (itemName == "Sword")
             {
-                pressFText.SetActive(false);
+                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                slotScript.SetStoredObject(gameObject);
+            }
+            else if (itemName == "Shovel")
+            {
+                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                slotScript.SetStoredObject(gameObject);
+            }
+            else if (itemName == "Lighter")
+            {
+                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                slotScript.SetStoredObject(gameObject);
+            }
+            else if (itemName == "Torch")
+            {
+                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                slotScript.SetStoredObject(gameObject);
+            }
+            else if (itemName == "Drill")
+            {
+                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                slotScript.SetStoredObject(gameObject);
+                Debug.Log("Drill");
+            }
+            else if (itemName == "Wooden Plank")
+            {
+                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
+                slotScript.SetStoredObject(gameObject);
+            }
 
-                inRange = false;
-
-
-                if (itemName == "Pickaxe")
+            if(slotScript.slotItemPrefab != null)
+            {
+                if (placeHolder.transform.childCount != 0)
                 {
-                    slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                    slotScript.SetStoredObject(gameObject);
-                    Debug.Log("Pickaxe");
-                }
-                else if (itemName == "Sword")
-                {
-                    slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                    slotScript.SetStoredObject(gameObject);
-                }
-                else if (itemName == "Shovel")
-                {
-                    slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                    slotScript.SetStoredObject(gameObject);
-                }
-                else if (itemName == "Lighter")
-                {
-                    slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                    slotScript.SetStoredObject(gameObject);
-                }
-                else if (itemName == "Torch")
-                {
-                    slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                    slotScript.SetStoredObject(gameObject);
-                }
-                else if (itemName == "Drill")
-                {
-                    slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                    slotScript.SetStoredObject(gameObject);
-                    Debug.Log("Drill");
-                }
-                else if (itemName == "Wooden Plank")
-                {
-                    slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                    slotScript.SetStoredObject(gameObject);
-                }
-
-                if(slotScript.slotItemPrefab != null)
-                {
-                    if (placeHolder.transform.childCount != 0)
-                    {
-                            slotScript.slotItemPrefab.GetComponent<BoxCollider>().enabled = false;
 
                             Destroy(placeHolder.transform.GetChild(0).gameObject);
 
@@ -107,19 +101,19 @@ public class PickupItem : MonoBehaviour
 
                             Destroy(gameObject);
 
-                    }
-                    else
-                    {
-                        slotScript.slotItemPrefab.GetComponent<BoxCollider>().enabled = false;
+                            placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
 
-                        Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
-
-                        Destroy(gameObject);
-
-                    }
                 }
-                
-            }
+                else
+                {
+                    Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
+
+                    Destroy(gameObject);
+
+                    placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
+
+                }
+            }   
             
         }
     }

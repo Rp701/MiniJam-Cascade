@@ -101,6 +101,7 @@ MonoBehaviour:
   pressFText: {fileID: 0}
   pressFToLoot: {fileID: 0}
   placeHolder: {fileID: 0}
+  inventoryCanvas: {fileID: 0}
 --- !u!65 &4252328963253734607
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -110,7 +111,7 @@ BoxCollider:
   m_GameObject: {fileID: 4518028798611375381}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.08, y: 0.04, z: 0.04}
   m_Center: {x: 0, y: 0, z: 0}
