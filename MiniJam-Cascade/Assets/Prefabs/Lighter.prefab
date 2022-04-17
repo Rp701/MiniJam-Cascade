@@ -113,6 +113,6 @@ MonoBehaviour:
   itemName: 
   inventory: {fileID: 0}
   pressFText: {fileID: 0}
-  pressFToLoot: {fileID: 0}
   placeHolder: {fileID: 0}
   inventoryCanvas: {fileID: 0}
+  pageNumber: 0

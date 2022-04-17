@@ -1,44 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using TMPro.EditorUtilities;
 
 public class PickupItem : MonoBehaviour
 {
     public string itemName;
     public GameObject inventory;
     public GameObject pressFText;
-    public GameObject pressFToLoot;
     public GameObject placeHolder;
     public GameObject inventoryCanvas;
-    private bool inRange;
-    Inventory inventoryScript;
+    public bool inRange;
     GameObject hotbarSlots;
-    int slotAmount;
+    GameObject otherSlots;
     Slot slotScript;
+    public int pageNumber;
+    string originialPressF;
+    OtherSlot otherSlotScript;
 
     private void Start()
     {
         inventoryCanvas = GameObject.Find("InventoryCanvas");
         inventory = GameObject.FindGameObjectWithTag("Player");
         pressFText = inventoryCanvas.transform.Find("PressFText").gameObject;
-        pressFToLoot = inventoryCanvas.transform.Find("PressFToLoot").gameObject;
-        inventoryScript = inventory.GetComponent<Inventory>();
         itemName = gameObject.name;
+        originialPressF = pressFText.GetComponent<TMP_Text>().text;
+        
         placeHolder = GameObject.Find("HandHolder");
         hotbarSlots = GameObject.Find("Slots");
-        slotAmount = hotbarSlots.transform.childCount;
-
-        for (int i = 0; i < slotAmount; i++)
-        {
-
-        }
+        otherSlots = GameObject.Find("Other Slots");
     }
 
     private void OnTriggerEnter(Collider other)
     {
             if (other.gameObject.tag == "Player")
             {
-                pressFText.SetActive(true);
+            pressFText.GetComponent<TMP_Text>().text = originialPressF + itemName;
+            pressFText.SetActive(true);
                 inRange = true;
             }
     }
@@ -51,14 +51,7 @@ public class PickupItem : MonoBehaviour
 
             inRange = false;
 
-
-            if (itemName == "Pickaxe")
-            {
-                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                slotScript.SetStoredObject(gameObject);
-                Debug.Log("Pickaxe");
-            }
-            else if (itemName == "Sword")
+            if (itemName == "Sword")
             {
                 slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
                 slotScript.SetStoredObject(gameObject);
@@ -82,38 +75,52 @@ public class PickupItem : MonoBehaviour
             {
                 slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
                 slotScript.SetStoredObject(gameObject);
-                Debug.Log("Drill");
             }
             else if (itemName == "Wooden Plank")
             {
                 slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
                 slotScript.SetStoredObject(gameObject);
             }
-
-            if(slotScript.slotItemPrefab != null)
+            else if (itemName == "Pickaxe Head")
             {
-                if (placeHolder.transform.childCount != 0)
+                otherSlotScript = otherSlots.transform.Find(itemName).gameObject.GetComponent<OtherSlot>();
+                otherSlotScript.SetCraftSlotObject(gameObject);
+            }
+            else if (itemName == "Pickaxe Handle")
+            {
+                otherSlotScript = otherSlots.transform.Find(itemName).gameObject.GetComponent<OtherSlot>();
+                otherSlotScript.SetCraftSlotObject(gameObject);
+            }
+            else if (itemName == "Letter")
+            {
+                slotScript = otherSlots.transform.Find("Diary").gameObject.GetComponent<Slot>();
+                if (otherSlots.transform.Find("Diary").gameObject.transform.childCount == 0)
                 {
-
-                            Destroy(placeHolder.transform.GetChild(0).gameObject);
-
-                            Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
-
-                            Destroy(gameObject);
-
-                            placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
-
+                    otherSlotScript.ActivateDiary();
                 }
-                else
+            }
+
+            if (gameObject.tag == "Item")
+            {
+                if (slotScript.slotItemPrefab != null)
                 {
-                    Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
+                    if (placeHolder.transform.childCount != 0)
+                    {
 
-                    Destroy(gameObject);
+                        Destroy(placeHolder.transform.GetChild(0).gameObject);
 
-                    placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
+                    }
+                    
+                        Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
 
+                        Destroy(gameObject);
+
+                        placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
                 }
-            }   
+            } else
+            {
+                Destroy(gameObject);
+            }
             
         }
     }

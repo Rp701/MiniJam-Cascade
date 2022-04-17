@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Letter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int pageNumber;
+
+    public void AddPage(int pageNumber)
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

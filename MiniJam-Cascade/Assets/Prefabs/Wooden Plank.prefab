@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4252328963253734607}
   m_Layer: 0
   m_Name: Wooden Plank
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4518028798611375381}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 549.0344, z: 20.087433}
+  m_LocalScale: {x: 100, y: 600, z: 20}
   m_Children:
   - {fileID: 5988952741189342087}
   m_Father: {fileID: 0}
@@ -99,9 +99,10 @@ MonoBehaviour:
   itemName: 
   inventory: {fileID: 0}
   pressFText: {fileID: 0}
-  pressFToLoot: {fileID: 0}
   placeHolder: {fileID: 0}
   inventoryCanvas: {fileID: 0}
+  inRange: 0
+  pageNumber: 0
 --- !u!65 &4252328963253734607
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -154,8 +155,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4734289736889331298}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_IsTrigger: 0
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.020000001, y: 0.019999998, z: 0.019999998}
-  m_Center: {x: 0, y: -2.0679515e-25, z: -4.6566123e-10}
+  m_Center: {x: 0, y: 0, z: 0}

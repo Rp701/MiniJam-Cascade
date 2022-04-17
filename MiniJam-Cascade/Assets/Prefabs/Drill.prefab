@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1873324329484994798}
   m_Layer: 0
   m_Name: Drill
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,9 +101,9 @@ MonoBehaviour:
   itemName: 
   inventory: {fileID: 0}
   pressFText: {fileID: 0}
-  pressFToLoot: {fileID: 0}
   placeHolder: {fileID: 0}
   inventoryCanvas: {fileID: 0}
+  pageNumber: 0
 --- !u!65 &-1873324329484994798
 BoxCollider:
   m_ObjectHideFlags: 0

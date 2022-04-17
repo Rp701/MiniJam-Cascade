@@ -1,24 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Hotbar : MonoBehaviour
 {
-    GameObject slot;
-    public GameObject slots;
-    Slot slotScript;
-    int childrenLength;
+    public GameObject slot;
+    public GameObject mainSlots;
+    public GameObject otherSlots;
+    public Slot slotScript;
 
-    GameObject itemHolder;
+    public GameObject itemHolder;
 
     // Start is called before the first frame update
     void Start()
     {
         itemHolder = GameObject.Find("HandHolder").gameObject;
-        childrenLength = itemHolder.transform.childCount;
 
 
-        slots = gameObject.transform.Find("Slots").gameObject;
+        mainSlots = gameObject.transform.Find("Slots").gameObject;
+        otherSlots = gameObject.transform.Find("Other Slots").gameObject;
     }
 
     // Update is called once per frame
@@ -52,28 +50,32 @@ public class Hotbar : MonoBehaviour
         {
             SetItem(6);
         }
-
-        //Gets the slot for the Key and the Item in it
-        void SetItem(int slotIndex)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            slot = slots.transform.GetChild(slotIndex).gameObject;
-            slotScript = slot.GetComponent<Slot>();
-
-
-            if (!string.IsNullOrEmpty(slotScript.storedObject))
-                {
-                    Debug.Log("hey ho");
-
-                    Destroy(itemHolder.transform.GetChild(0).gameObject);
-
-                    Instantiate(slotScript.slotItemPrefab, itemHolder.transform, false);
-
-                    itemHolder.transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
-                }
-
-            
+            OpenDiary();
         }
-            
+    }
+    //Gets the slot for the Item and activates it
+    public void SetItem(int slotIndex)
+    {
+        slot = mainSlots.transform.GetChild(slotIndex).gameObject;
+        slotScript = slot.GetComponent<Slot>();
+
+        if (!string.IsNullOrEmpty(slotScript.storedObject))
+        {
+            if(itemHolder.transform.childCount != 0)
+            {
+                Destroy(itemHolder.transform.GetChild(0).gameObject);
+            }
+
+            Instantiate(slotScript.slotItemPrefab, itemHolder.transform, false);
+
+            itemHolder.transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
         }
     }
 
+    void OpenDiary()
+    {
+
+    }
+}
