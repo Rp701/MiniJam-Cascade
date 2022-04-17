@@ -59,15 +59,21 @@ public class Hotbar : MonoBehaviour
             slot = slots.transform.GetChild(slotIndex).gameObject;
             slotScript = slot.GetComponent<Slot>();
 
-            if (slotScript.storedObject != null)
-            {
+
+            if (!string.IsNullOrEmpty(slotScript.storedObject))
+                {
+                    Debug.Log("hey ho");
+
                     Destroy(itemHolder.transform.GetChild(0).gameObject);
 
                     Instantiate(slotScript.slotItemPrefab, itemHolder.transform, false);
 
                     itemHolder.transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
                 }
-            }
+
+            
+        }
+            
         }
     }
 

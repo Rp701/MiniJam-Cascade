@@ -18,6 +18,7 @@ public class PickupItem : MonoBehaviour
     {
         inventory = GameObject.FindGameObjectWithTag("Player");
         pressFText = GameObject.Find("Canvas").transform.GetChild(0).gameObject;
+        pressFToLoot = GameObject.Find("Canvas").transform.Find("PressFToLoot").gameObject;
         inventoryScript = inventory.GetComponent<Inventory>();
         itemName = gameObject.name;
         placeHolder = GameObject.Find("HandHolder");
@@ -60,6 +61,7 @@ public class PickupItem : MonoBehaviour
                 {
                     slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
                     slotScript.SetStoredObject(gameObject);
+                    Debug.Log("Pickaxe");
                 }
                 else if (itemName == "Sword")
                 {
@@ -85,6 +87,7 @@ public class PickupItem : MonoBehaviour
                 {
                     slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
                     slotScript.SetStoredObject(gameObject);
+                    Debug.Log("Drill");
                 }
                 else if (itemName == "Wooden Plank")
                 {
@@ -92,25 +95,30 @@ public class PickupItem : MonoBehaviour
                     slotScript.SetStoredObject(gameObject);
                 }
 
-                if (placeHolder.transform.childCount != 0)
+                if(slotScript.slotItemPrefab != null)
                 {
-                    Destroy(placeHolder.transform.GetChild(0).gameObject);
+                    if (placeHolder.transform.childCount != 0)
+                    {
+                            slotScript.slotItemPrefab.GetComponent<BoxCollider>().enabled = false;
 
-                    Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
+                            Destroy(placeHolder.transform.GetChild(0).gameObject);
 
-                    Destroy(gameObject);
+                            Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
 
-                    placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
+                            Destroy(gameObject);
 
+                    }
+                    else
+                    {
+                        slotScript.slotItemPrefab.GetComponent<BoxCollider>().enabled = false;
+
+                        Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
+
+                        Destroy(gameObject);
+
+                    }
                 }
-                else
-                {
-                    Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
-
-                    Destroy(gameObject);
-
-                    placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
-                }
+                
             }
             
         }
