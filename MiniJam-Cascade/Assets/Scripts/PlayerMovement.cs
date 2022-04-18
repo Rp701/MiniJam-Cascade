@@ -6,19 +6,21 @@ public class PlayerMovement : MonoBehaviour
 {
     //Variables
     private float moveSpeed;
+    [Header("Movement")]
     public float walkSpeed;
     public float runSpeed;
     public float JumpHeight;
-
+    
     private Vector3 moveDirection;
     private Vector3 velocity;
 
     private bool isGrounded;
+    [Header("Physics")]
     public float groundCheckDistance;
     public LayerMask groundMask;
     public float gravity;
 
-    //References
+    //References    
 
     private CharacterController controller;
 
