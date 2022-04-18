@@ -101,6 +101,7 @@ MonoBehaviour:
   pressFText: {fileID: 0}
   placeHolder: {fileID: 0}
   inventoryCanvas: {fileID: 0}
+  inRange: 0
   pageNumber: 0
 --- !u!65 &-7940362281601797938
 BoxCollider:
@@ -113,5 +114,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.008320461, z: 0.2}
+  m_Size: {x: 0.15, y: 0.01, z: 0.2}
   m_Center: {x: 0.012542687, y: -0.0017292078, z: 0.037607588}

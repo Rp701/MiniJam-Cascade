@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-using TMPro.EditorUtilities;
 
 public class PickupItem : MonoBehaviour
 {
@@ -76,7 +72,7 @@ public class PickupItem : MonoBehaviour
                 slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
                 slotScript.SetStoredObject(gameObject);
             }
-            else if (itemName == "Wooden Plank")
+            else if (itemName == "Plank")
             {
                 slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
                 slotScript.SetStoredObject(gameObject);
@@ -109,14 +105,24 @@ public class PickupItem : MonoBehaviour
 
                         Destroy(placeHolder.transform.GetChild(0).gameObject);
 
-                    }
-                    
                         Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
+
+                        placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
 
                         Destroy(gameObject);
 
+
+                    } else
+                    {
+                        Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
+
                         placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
-                }
+
+                        Destroy(gameObject);
+
+                        Debug.Log("1st Time");
+                    }
+                } 
             } else
             {
                 Destroy(gameObject);

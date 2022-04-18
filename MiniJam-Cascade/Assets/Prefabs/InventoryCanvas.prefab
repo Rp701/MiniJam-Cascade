@@ -166,8 +166,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storedObject: 
   isStoring: 0
-  accquiredHead: 0
-  accquiredHandle: 0
 --- !u!1 &1090796190134958839
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +363,7 @@ GameObject:
   - component: {fileID: 1090796190267828478}
   - component: {fileID: 1090796190267828448}
   m_Layer: 5
-  m_Name: Slot Wooden Plank
+  m_Name: Slot Plank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,7 +441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storedObject: 
   isStoring: 0
-  slotItemPrefab: {fileID: 4518028798611375381, guid: e52611f00e0529743a1c057026fc0445, type: 3}
+  slotItemPrefab: {fileID: 1509695853593622905, guid: a138a2b52fdaac24c94224029b7d2143, type: 3}
 --- !u!1 &1090796190271845255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,8 +1973,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storedObject: 
   isStoring: 0
-  accquiredHead: 0
-  accquiredHandle: 0
 --- !u!1 &4528966343931808229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,8 +2139,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storedObject: 
   isStoring: 0
-  accquiredHead: 0
-  accquiredHandle: 0
 --- !u!1 &8207538650339793225
 GameObject:
   m_ObjectHideFlags: 0

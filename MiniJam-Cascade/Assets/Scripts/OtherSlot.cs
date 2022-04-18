@@ -8,15 +8,13 @@ public class OtherSlot : MonoBehaviour
     public string storedObject;
     public bool isStoring = false;
     GameObject lockIcon;
-    [HideInInspector]
-    public bool accquiredHead = false;
-    [HideInInspector]
-    public bool accquiredHandle = false;
     Slot slotScript;
     GameObject hotbarSlots;
+    Inventory inventoryScript;
 
     private void Start()
     {
+        inventoryScript = GameObject.Find("FirstPersonPlayer").GetComponent<Inventory>();
         lockIcon = gameObject.transform.Find("Image").gameObject;
         hotbarSlots = GameObject.Find("Slots");
     }
@@ -29,13 +27,13 @@ public class OtherSlot : MonoBehaviour
 
         if(storedObject == "Pickaxe Handle")
         {
-            accquiredHandle = true;
+            inventoryScript.acquiredHandle = true;
         } else if(storedObject == "Pickaxe Head")
         {
-            accquiredHead = true;
+            inventoryScript.acquiredHead = true;
         }
 
-        if(accquiredHandle && accquiredHead)
+        if(inventoryScript.acquiredHandle && inventoryScript.acquiredHead)
         {
             slotScript = hotbarSlots.transform.Find("Slot Pickaxe").gameObject.GetComponent<Slot>();
             slotScript.SetCraftedObject("Pickaxe");

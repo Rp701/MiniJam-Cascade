@@ -115,4 +115,5 @@ MonoBehaviour:
   pressFText: {fileID: 0}
   placeHolder: {fileID: 0}
   inventoryCanvas: {fileID: 0}
+  inRange: 0
   pageNumber: 0

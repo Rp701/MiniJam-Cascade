@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Hotbar : MonoBehaviour
 {
-    public GameObject slot;
+    GameObject slot;
     public GameObject mainSlots;
     public GameObject otherSlots;
-    public Slot slotScript;
+    Slot slotScript;
 
     public GameObject itemHolder;
 
@@ -69,8 +69,6 @@ public class Hotbar : MonoBehaviour
             }
 
             Instantiate(slotScript.slotItemPrefab, itemHolder.transform, false);
-
-            itemHolder.transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
         }
     }
 
