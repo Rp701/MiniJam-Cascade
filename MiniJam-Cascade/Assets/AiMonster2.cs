@@ -34,6 +34,7 @@ public class AiMonster2 : MonoBehaviour
         if(Distance < ChaseDistance)
         {
             agent.SetDestination(target.position);
+            Debug.Log("Chase");
             if(Distance <= AttackDistance)
             {
                 Debug.Log("Attacking");
@@ -47,6 +48,8 @@ public class AiMonster2 : MonoBehaviour
         if(Distance > ChaseDistance)
         {
             agent.SetDestination(homeMonster.position);
+            Debug.Log("Go Home");
+
         }
     }
 
