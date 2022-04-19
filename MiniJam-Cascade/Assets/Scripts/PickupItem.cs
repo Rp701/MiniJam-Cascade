@@ -104,24 +104,15 @@ public class PickupItem : MonoBehaviour
                     {
 
                         Destroy(placeHolder.transform.GetChild(0).gameObject);
+                        Debug.Log("Destroyed in Hand");
 
-                        Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
-
-                        placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
-
-                        Destroy(gameObject);
-
-
-                    } else
-                    {
-                        Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
-
-                        placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
-
-                        Destroy(gameObject);
-
-                        Debug.Log("1st Time");
                     }
+
+                    Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
+
+                    placeHolder.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
+
+                    Destroy(gameObject);
                 } 
             } else
             {
