@@ -115,7 +115,7 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator FlashHit()
     {
         redDamageImage.SetActive(true);
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.1f);
         redDamageImage.SetActive(false);
     }
 }
