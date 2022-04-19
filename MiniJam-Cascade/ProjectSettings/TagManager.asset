@@ -7,6 +7,8 @@ TagManager:
   - Item
   - Enemy
   - FloorKill
+  - sword
+  - piackaxe
   layers:
   - Default
   - TransparentFX
