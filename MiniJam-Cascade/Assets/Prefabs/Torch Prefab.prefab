@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 843065372454041840}
   - component: {fileID: 2049910635975963924}
   m_Layer: 0
-  m_Name: Lighter Prefab
+  m_Name: Torch Prefab
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

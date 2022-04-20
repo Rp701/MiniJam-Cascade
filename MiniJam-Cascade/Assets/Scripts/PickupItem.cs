@@ -5,16 +5,18 @@ public class PickupItem : MonoBehaviour
 {
     public string itemName;
     public GameObject inventory;
-    public GameObject pressFText;
-    public GameObject placeHolder;
-    public GameObject inventoryCanvas;
+    GameObject pressFText;
+    GameObject placeHolder;
+    GameObject inventoryCanvas;
+    GameObject DiaryPages;
     public bool inRange;
     GameObject hotbarSlots;
     GameObject otherSlots;
     Slot slotScript;
-    public int pageNumber;
     string originialPressF;
     OtherSlot otherSlotScript;
+    public int pageNumber;
+    private string pageName;
 
     private void Start()
     {
@@ -27,15 +29,24 @@ public class PickupItem : MonoBehaviour
         placeHolder = GameObject.Find("HandHolderLighter");
         hotbarSlots = GameObject.Find("Slots");
         otherSlots = GameObject.Find("Other Slots");
+        DiaryPages = inventoryCanvas.transform.Find("DiaryPages").gameObject;
     }
 
     private void OnTriggerEnter(Collider other)
     {
             if (other.gameObject.tag == "Player")
             {
-            pressFText.GetComponent<TMP_Text>().text = originialPressF + itemName;
-            pressFText.SetActive(true);
-                inRange = true;
+                if (gameObject.tag== "Letter") 
+                {
+                    pressFText.GetComponent<TMP_Text>().text = "Read Page " + pageNumber.ToString();
+                    pressFText.SetActive(true);
+                    inRange = true;
+                } else
+                {
+                    pressFText.GetComponent<TMP_Text>().text = originialPressF + itemName;
+                    pressFText.SetActive(true);
+                    inRange = true;
+                }
             }
     }
 
@@ -86,14 +97,20 @@ public class PickupItem : MonoBehaviour
             {
                 otherSlotScript = otherSlots.transform.Find(itemName).gameObject.GetComponent<OtherSlot>();
                 otherSlotScript.SetCraftSlotObject(gameObject);
-            }
-            else if (itemName == "Letter")
+            } else if(itemName == "Car Key")
             {
-                slotScript = otherSlots.transform.Find("Diary").gameObject.GetComponent<Slot>();
-                if (otherSlots.transform.Find("Diary").gameObject.transform.childCount == 0)
-                {
-                    otherSlotScript.ActivateDiary();
-                }
+                otherSlotScript = otherSlots.transform.Find(itemName).gameObject.GetComponent<OtherSlot>();
+                otherSlotScript.SetCraftSlotObject(gameObject);
+            }
+            else if (gameObject.tag == "Letter")
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0f;
+                inventoryCanvas.transform.Find("Hotbar").gameObject.SetActive(false);
+                pageName = "Page " + pageNumber.ToString();
+                Debug.Log(DiaryPages);
+                DiaryPages.SetActive(true);
+                DiaryPages.transform.Find(pageName).gameObject.SetActive(true);
             }
 
             if (gameObject.tag == "Item")
@@ -104,7 +121,6 @@ public class PickupItem : MonoBehaviour
                     {
 
                         Destroy(placeHolder.transform.GetChild(0).gameObject);
-                        Debug.Log("Destroyed in Hand");
 
                     }
 
@@ -114,7 +130,7 @@ public class PickupItem : MonoBehaviour
 
                     Destroy(gameObject);
                 } 
-            } else
+            } else if(gameObject.tag != "Letter")
             {
                 Destroy(gameObject);
             }

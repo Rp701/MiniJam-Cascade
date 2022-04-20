@@ -14,7 +14,6 @@ public class Hotbar : MonoBehaviour
     {
         itemHolder = GameObject.Find("HandHolder").gameObject;
 
-
         mainSlots = gameObject.transform.Find("Slots").gameObject;
         otherSlots = gameObject.transform.Find("Other Slots").gameObject;
     }
@@ -50,10 +49,6 @@ public class Hotbar : MonoBehaviour
         {
             SetItem(6);
         }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            OpenDiary();
-        }
     }
     //Gets the slot for the Item and activates it
     public void SetItem(int slotIndex)
@@ -70,10 +65,5 @@ public class Hotbar : MonoBehaviour
 
             Instantiate(slotScript.slotItemPrefab, itemHolder.transform, false);
         }
-    }
-
-    void OpenDiary()
-    {
-
     }
 }

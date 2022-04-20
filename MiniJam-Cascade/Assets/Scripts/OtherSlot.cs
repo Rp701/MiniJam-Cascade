@@ -24,8 +24,10 @@ public class OtherSlot : MonoBehaviour
         gameObject.GetComponent<Image>().color = new Color32(79, 245, 7, 255);
         isStoring = true;
         lockIcon.SetActive(false);
-
-        if(storedObject == "Pickaxe Handle")
+        if(storedObject == "Car Key")
+        {
+            Debug.Log("Picked Up Car Key");
+        }else if(storedObject == "Pickaxe Handle")
         {
             inventoryScript.acquiredHandle = true;
         } else if(storedObject == "Pickaxe Head")
@@ -38,11 +40,5 @@ public class OtherSlot : MonoBehaviour
             slotScript = hotbarSlots.transform.Find("Slot Pickaxe").gameObject.GetComponent<Slot>();
             slotScript.SetCraftedObject("Pickaxe");
         }
-    }
-
-    public void ActivateDiary()
-    {
-        gameObject.GetComponent<Image>().color = new Color32(255, 102, 0, 255);
-        lockIcon.SetActive(false);
     }
 }
