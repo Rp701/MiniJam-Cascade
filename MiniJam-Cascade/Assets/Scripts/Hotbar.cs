@@ -41,14 +41,6 @@ public class Hotbar : MonoBehaviour
         {
             SetItem(4);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            SetItem(5);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            SetItem(6);
-        }
     }
     //Gets the slot for the Item and activates it
     public void SetItem(int slotIndex)
