@@ -11,6 +11,7 @@ TagManager:
   - piackaxe
   - Letter
   - River
+  - Plank
   layers:
   - Default
   - TransparentFX

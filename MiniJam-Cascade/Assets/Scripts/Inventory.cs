@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
     public bool acquiredCarKeys;
     public bool acquiredPlank;
 
-    private void Start()
+    private void Awake()
     {
         acquiredHead = false;
         acquiredHandle = false;

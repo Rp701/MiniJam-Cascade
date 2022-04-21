@@ -43,15 +43,15 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = -2f;
         }
-
         float moveZ = Input.GetAxis("Vertical");
         float moveX = Input.GetAxis("Horizontal");
 
         moveDirection = transform.right * moveX + transform.forward * moveZ;
 
-        if(isGrounded)
+        if (isGrounded)
         {
-            if(moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
+
+            if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
             {
                 //Walk
                 Walk();
