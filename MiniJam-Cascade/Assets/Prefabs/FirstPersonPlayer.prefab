@@ -768,12 +768,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 15
   runSpeed: 22.5
-  JumpHeight: 3
-  groundCheckDistance: 3.58
+  JumpHeight: 2.5
+  groundCheckDistance: 4.6
   groundMask:
     serializedVersion: 2
     m_Bits: 8
-  gravity: -19
+  gravity: -28.5
 --- !u!114 &4513873721218522499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,9 +789,8 @@ MonoBehaviour:
   acquiredHead: 0
   acquiredHandle: 0
   acquiredShovel: 0
-  unlockedPage1: 0
-  unlockedPage2: 0
-  unlockedPage3: 0
+  acquiredCarKeys: 0
+  acquiredPlank: 0
 --- !u!1 &4513873721524032005
 GameObject:
   m_ObjectHideFlags: 0

@@ -817,6 +817,74 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b68f1c43d379e574aa00724bd2d5104e, type: 3}
+--- !u!1001 &487252891
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1316880047665888423, guid: 737e6330148863646922dd8791779841, type: 3}
+      propertyPath: m_Name
+      value: SceneFader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316880047665888425, guid: 737e6330148863646922dd8791779841, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316880047665888425, guid: 737e6330148863646922dd8791779841, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316880047665888425, guid: 737e6330148863646922dd8791779841, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316880047665888425, guid: 737e6330148863646922dd8791779841, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316880047665888425, guid: 737e6330148863646922dd8791779841, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316880047665888425, guid: 737e6330148863646922dd8791779841, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316880047665888425, guid: 737e6330148863646922dd8791779841, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316880047665888425, guid: 737e6330148863646922dd8791779841, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316880047665888425, guid: 737e6330148863646922dd8791779841, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316880047665888425, guid: 737e6330148863646922dd8791779841, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316880047665888425, guid: 737e6330148863646922dd8791779841, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 737e6330148863646922dd8791779841, type: 3}
+--- !u!114 &487252892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1316880047665888422, guid: 737e6330148863646922dd8791779841, type: 3}
+  m_PrefabInstance: {fileID: 487252891}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94db030d6ff438442960c2ff5c7b37b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &524969369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,16 +1823,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 254944593}
-        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 1
+      - m_Target: {fileID: 487252892}
+        m_TargetAssemblyTypeName: SceneFader, Assembly-CSharp
+        m_MethodName: FadeTo
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: The scene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1175602014
