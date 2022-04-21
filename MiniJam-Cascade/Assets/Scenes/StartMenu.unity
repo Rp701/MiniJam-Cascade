@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d6b9804910b634584d5aaf626d0bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: StartMenu
+  sceneToLoad: The scene
   mainMenuPanel: {fileID: 1225741950}
   creditsPanel: {fileID: 1973410173}
 --- !u!4 &254944594

@@ -4,18 +4,19 @@ using TMPro;
 public class PickupItem : MonoBehaviour
 {
     string itemName;
+    public bool inRange;
+    public int pageNumber;
     GameObject inventory;
     GameObject pressFText;
     GameObject placeHolder;
+    GameObject TorchHolder;
     GameObject inventoryCanvas;
     GameObject DiaryPages;
-    public bool inRange;
     GameObject hotbarSlots;
     GameObject otherSlots;
     Slot slotScript;
-    string originialPressF;
+    private string originialPressF;
     OtherSlot otherSlotScript;
-    public int pageNumber;
     private string pageName;
 
     private void Start()
@@ -25,7 +26,8 @@ public class PickupItem : MonoBehaviour
         pressFText = inventoryCanvas.transform.Find("PressFText").gameObject;
         itemName = gameObject.name;
         originialPressF = pressFText.GetComponent<TMP_Text>().text;
-        
+
+        TorchHolder = GameObject.Find("TorchHolder");
         placeHolder = GameObject.Find("HandHolder");
         hotbarSlots = GameObject.Find("Slots");
         otherSlots = GameObject.Find("Other Slots");
@@ -70,8 +72,11 @@ public class PickupItem : MonoBehaviour
             }
             else if (itemName == "Torch")
             {
-                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                slotScript.SetStoredObject(gameObject);
+                slotScript = TorchHolder.GetComponent<Slot>();
+                
+                Instantiate(slotScript.slotItemPrefab, TorchHolder.transform, false);
+
+                Destroy(gameObject);
             }
             else if (itemName == "Drill")
             {
@@ -115,7 +120,6 @@ public class PickupItem : MonoBehaviour
                     if (placeHolder.transform.childCount != 0)
                     {
                         Destroy(placeHolder.transform.GetChild(0).gameObject);
-
                     }
 
                     Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);

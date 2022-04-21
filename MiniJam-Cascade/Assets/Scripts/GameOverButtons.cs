@@ -12,6 +12,12 @@ public class GameOverButtons : MonoBehaviour
         SceneManager.LoadScene(sceneToLoad);
     }
 
+    public void RetryLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(sceneToLoad);
+    }
+
     public void QuitGame()
     {
         Application.Quit();

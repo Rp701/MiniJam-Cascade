@@ -12,9 +12,12 @@ public class Slot : MonoBehaviour
 
     private void Start()
     {
-        gameObject.GetComponent<Image>().color = new Color32(63, 66, 64, 255);
-        lockIcon = gameObject.transform.Find("Image").gameObject;
-        hotbarScript = GameObject.Find("Hotbar").GetComponent<Hotbar>();
+        if(gameObject.name != "TorchHolder")
+        {
+            gameObject.GetComponent<Image>().color = new Color32(63, 66, 64, 255);
+            lockIcon = gameObject.transform.Find("Image").gameObject;
+            hotbarScript = GameObject.Find("Hotbar").GetComponent<Hotbar>();
+        }
     }
 
     public void SetStoredObject(GameObject storingObject)

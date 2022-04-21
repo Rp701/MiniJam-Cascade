@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 2049910635975963928}
   m_Layer: 0
   m_Name: Torch
-  m_TagString: Item
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,10 +204,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90fa563e2f2a2fe43b6d9873a0af9a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
-  inventory: {fileID: 0}
-  pressFText: {fileID: 0}
-  placeHolder: {fileID: 0}
-  inventoryCanvas: {fileID: 0}
   inRange: 0
   pageNumber: 0
