@@ -71,7 +71,7 @@ public class PlayerHealth : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         gameOverText.SetActive(true);
         blackFadeImage.SetActive(true);
-        fellOffMapText.SetActive(true);
+        fellInRiver.SetActive(true);
         gameOverButtons.SetActive(true);
     }
 
@@ -96,6 +96,12 @@ public class PlayerHealth : MonoBehaviour
         if(other.gameObject.CompareTag("FloorKill"))
         {
             FellOffMap();
+        }
+
+        //If the palyer falls into the river
+        if(other.gameObject.CompareTag("River"))
+        {
+            FellInRiver();
         }
     }
 

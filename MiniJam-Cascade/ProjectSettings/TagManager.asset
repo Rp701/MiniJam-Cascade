@@ -9,6 +9,8 @@ TagManager:
   - FloorKill
   - sword
   - piackaxe
+  - Letter
+  - River
   layers:
   - Default
   - TransparentFX
