@@ -703,7 +703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storedObject: 
   isStoring: 0
-  slotItemPrefab: {fileID: 0}
+  slotItemPrefab: {fileID: 5330657681880087438, guid: 557c499ae3f01b342a4efdad74d5d42b, type: 3}
 --- !u!1 &1090796190696169371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1750,7 +1750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storedObject: 
   isStoring: 0
-  slotItemPrefab: {fileID: 0}
+  slotItemPrefab: {fileID: 1203541978304846117, guid: b8ba937188fd32f49ad4c41babbce4b2, type: 3}
 --- !u!1 &1797689431706206817
 GameObject:
   m_ObjectHideFlags: 0

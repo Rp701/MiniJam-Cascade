@@ -525,6 +525,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1090796190624607137, guid: 03859809b5b52fa4285f8c2e35e68c3c, type: 3}
+      propertyPath: slotItemPrefab
+      value: 
+      objectReference: {fileID: 5330657681880087438, guid: 557c499ae3f01b342a4efdad74d5d42b, type: 3}
     - target: {fileID: 1090796191513971074, guid: 03859809b5b52fa4285f8c2e35e68c3c, type: 3}
       propertyPath: m_Name
       value: InventoryCanvas
@@ -613,6 +617,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1090796191906387770, guid: 03859809b5b52fa4285f8c2e35e68c3c, type: 3}
+      propertyPath: slotItemPrefab
+      value: 
+      objectReference: {fileID: 1203541978304846117, guid: b8ba937188fd32f49ad4c41babbce4b2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03859809b5b52fa4285f8c2e35e68c3c, type: 3}
 --- !u!1001 &515192427

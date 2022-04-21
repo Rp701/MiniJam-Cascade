@@ -3,8 +3,8 @@ using TMPro;
 
 public class PickupItem : MonoBehaviour
 {
-    public string itemName;
-    public GameObject inventory;
+    string itemName;
+    GameObject inventory;
     GameObject pressFText;
     GameObject placeHolder;
     GameObject inventoryCanvas;
@@ -68,11 +68,6 @@ public class PickupItem : MonoBehaviour
                 slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
                 slotScript.SetStoredObject(gameObject);
             }
-            else if (itemName == "Lighter")
-            {
-                slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
-                slotScript.SetStoredObject(gameObject);
-            }
             else if (itemName == "Torch")
             {
                 slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
@@ -119,7 +114,6 @@ public class PickupItem : MonoBehaviour
                 {
                     if (placeHolder.transform.childCount != 0)
                     {
-
                         Destroy(placeHolder.transform.GetChild(0).gameObject);
 
                     }
