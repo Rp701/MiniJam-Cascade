@@ -18,7 +18,6 @@ public class Letter : MonoBehaviour
         Time.timeScale = 0f;
         hotbar.SetActive(false);
         DiaryPages.transform.GetChild(pageNumber-1).gameObject.SetActive(true);
-        Debug.Log(DiaryPages);
     }
     public void ClosePage()
     {
