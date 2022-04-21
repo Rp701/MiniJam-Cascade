@@ -16,6 +16,7 @@ public class MainMenuManager : MonoBehaviour
     //Load whatever scene sceneToLoad is called
     public void LoadLevel()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneToLoad);
     }
 
