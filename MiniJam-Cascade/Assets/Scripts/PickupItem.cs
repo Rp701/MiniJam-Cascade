@@ -26,7 +26,7 @@ public class PickupItem : MonoBehaviour
         itemName = gameObject.name;
         originialPressF = pressFText.GetComponent<TMP_Text>().text;
         
-        placeHolder = GameObject.Find("HandHolderLighter");
+        placeHolder = GameObject.Find("HandHolder");
         hotbarSlots = GameObject.Find("Slots");
         otherSlots = GameObject.Find("Other Slots");
         DiaryPages = inventoryCanvas.transform.Find("DiaryPages").gameObject;
