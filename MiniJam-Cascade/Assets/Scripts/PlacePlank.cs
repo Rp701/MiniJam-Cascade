@@ -56,13 +56,21 @@ public class PlacePlank : MonoBehaviour
 
                 if (currentHandItem.tag == "Plank")
                 {
+                    Canvas.transform.Find("TakeItemInHand").gameObject.SetActive(false);
+                    Canvas.transform.Find("Unlocked").gameObject.SetActive(true);
+
                     if (isUnlocked && Input.GetKeyDown(KeyCode.Mouse0))
                     {
                         gameObject.transform.Find("PlacePlank").gameObject.SetActive(true);
-                        gameObject.transform.Find("PlacePlank").gameObject.transform.parent = null;
+                        gameObject.transform.Find("PlacePlank").gameObject.transform.parent = GameObject.Find("River Planks").transform;
 
                         Destroy(gameObject);
                     }
+                }
+                else if(inventoryScript.acquiredPlank)
+                {   
+                    Canvas.transform.Find("Unlocked").gameObject.SetActive(false);
+                    Canvas.transform.Find("TakeItemInHand").gameObject.SetActive(true);
                 }
             }
         }
@@ -73,15 +81,8 @@ public class PlacePlank : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             Canvas.transform.Find("TakeItemInHand").gameObject.SetActive(false);
-
-            if (isUnlocked)
-            {
-                Canvas.transform.Find("Unlocked").gameObject.SetActive(false);
-            }
-            else
-            {
-                Canvas.transform.Find("Locked").gameObject.SetActive(false);
-            }
+            Canvas.transform.Find("Unlocked").gameObject.SetActive(false);
+            Canvas.transform.Find("Locked").gameObject.SetActive(false);
         }
     }
 }

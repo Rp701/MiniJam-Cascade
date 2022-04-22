@@ -27,13 +27,6 @@ public class PlayerHealth : MonoBehaviour
     {
         health = startHealth;
         healthText.text = "Health: " + health.ToString();
-
-        blackFadeImage = GameObject.Find("BlackFadeImage");
-        gameOverText = GameObject.Find("GameOver Text");
-        EnemyKillYouText = GameObject.Find("EnemyKilledYou - Text");
-        fellOffMapText = GameObject.Find("FellOffMap - Text");
-        fellInRiver = GameObject.Find("FellInRiver - Text");
-        gameOverButtons = GameObject.Find("GameOverButtons");
     }
 
     private void Update()

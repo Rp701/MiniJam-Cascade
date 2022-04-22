@@ -4,12 +4,14 @@ public class CarWin : MonoBehaviour
 {
     Inventory inventoryScript;
     GameObject Canvas;
+    GameObject SceneFader;
 
     // Start is called before the first frame update
     void Start()
     {
         inventoryScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         Canvas = gameObject.transform.Find("Canvas").gameObject;
+        SceneFader = GameObject.Find("SceneFader");
     }
 
     void OnTriggerEnter(Collider other)
@@ -27,7 +29,7 @@ public class CarWin : MonoBehaviour
     {
         if (inventoryScript.acquiredCarKeys && Input.GetKeyDown(KeyCode.F))
         {
-            Debug.Log("You win");
+            SceneFader.GetComponent<SceneFader>().FadeTo("EndScene");
         }
     }
     void OnTriggerExit(Collider other)

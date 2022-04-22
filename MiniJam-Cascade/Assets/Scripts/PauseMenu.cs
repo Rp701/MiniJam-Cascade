@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!isCanvasActive)
+            if (isCanvasActive == false)
             {
                 for (int i = 0; i < gameObject.transform.childCount; i++)
                 {
@@ -25,6 +25,7 @@ public class PauseMenu : MonoBehaviour
                 }
                 isCanvasActive = true;
                 Time.timeScale = 0f;
+                Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
             } else
             {
@@ -34,6 +35,7 @@ public class PauseMenu : MonoBehaviour
                 }
                 isCanvasActive = false;
                 Time.timeScale = 1f;
+                Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
             }    
         }

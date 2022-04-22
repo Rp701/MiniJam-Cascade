@@ -7,23 +7,21 @@ public class EnemyHealth : MonoBehaviour
 
     public GameObject BloodEnemy;
 
-    public GameObject EnemeyCollider;
+    public GameObject EnemyColliderObject;
+    private BoxCollider EnemyCollider;
 
     public float EnemyHealthHeart = 20f;
 
     public bool isDead = false;
-    
 
     public float dyingSmooth = 2.5f;
     public float RotationOfDeath = 0f;
     public float GeneralDeathRotation;
-    
-
 
     // Start is called before the first frame update
     void Start()
     {
-        EnemeyCollider = GameObject.Find("ColliderMonster");
+        EnemyColliderObject = GameObject.Find("ColliderMonster");
         RotationOfDeath = GeneralDeathRotation;
         BloodEnemy.SetActive(false);
     }
@@ -62,7 +60,7 @@ public class EnemyHealth : MonoBehaviour
             gameObject.transform.Rotate(GeneralDeathRotation, 0f, 0f);
             isDead = true;
             BloodEnemy.SetActive(false);
-            Destroy(EnemeyCollider);
+            Destroy(EnemyColliderObject);
             Destroy(gameObject, 2.5f);
         }
         GeneralDeathRotation = Mathf.Lerp(GeneralDeathRotation, RotationOfDeath, Time.deltaTime * dyingSmooth);

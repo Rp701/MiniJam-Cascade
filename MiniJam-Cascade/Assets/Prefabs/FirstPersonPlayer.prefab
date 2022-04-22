@@ -493,7 +493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ce3cae7441cec449bceb3f6948fdfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 6
+  startHealth: 24
   healthBar: {fileID: 0}
   healthText: {fileID: 0}
   damageDelay: 0.75
@@ -766,8 +766,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e107853c474e95a40b6ed01d1604cd56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 15
-  runSpeed: 22.5
+  walkSpeed: 20
+  runSpeed: 40
   JumpHeight: 2.5
   groundCheckDistance: 4.6
   groundMask:
