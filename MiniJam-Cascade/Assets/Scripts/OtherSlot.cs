@@ -26,18 +26,13 @@ public class OtherSlot : MonoBehaviour
         lockIcon.SetActive(false);
         if(storedObject == "Pickaxe Handle")
         {
-            inventoryScript.acquiredHandle = true;
-
             if (inventoryScript.acquiredHandle && inventoryScript.acquiredHead)
             {
                 slotScript = hotbarSlots.transform.Find("Slot Pickaxe").gameObject.GetComponent<Slot>();
                 slotScript.SetCraftedObject("Pickaxe");
             }
-
         } else if(storedObject == "Pickaxe Head")
         {
-            inventoryScript.acquiredHead = true;
-
             if (inventoryScript.acquiredHandle && inventoryScript.acquiredHead)
             {
                 slotScript = hotbarSlots.transform.Find("Slot Pickaxe").gameObject.GetComponent<Slot>();

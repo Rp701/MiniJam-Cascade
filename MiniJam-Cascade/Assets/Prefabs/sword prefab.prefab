@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3115943304961126512}
   - component: {fileID: 2058662315812323285}
   - component: {fileID: 4284367118682098463}
+  - component: {fileID: -6986096464396045252}
   m_Layer: 0
-  m_Name: sword prefab
-  m_TagString: Untagged
+  m_Name: Sword prefab
+  m_TagString: sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2339018856267688650}
-  m_LocalRotation: {x: -0.46502078, y: 0.5326873, z: -0.5326871, w: 0.4650207}
-  m_LocalPosition: {x: -8.810509, y: 125.597725, z: -30.374178}
-  m_LocalScale: {x: 24.44145, y: 24.44145, z: 24.44145}
+  m_LocalRotation: {x: 0, y: 0.70710677, z: 0.70710677, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 12, y: 12, z: 16}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -187.76, y: -90, z: 90}
+  m_LocalEulerAnglesHint: {x: -90, y: 90, z: 90}
 --- !u!33 &2058662315812323285
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -84,3 +85,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-6986096464396045252
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339018856267688650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.023049135, y: 0.049910884, z: 0.1282882}
+  m_Center: {x: 0, y: -0.0017129222, z: 0.09903449}

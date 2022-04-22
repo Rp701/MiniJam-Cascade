@@ -19,7 +19,7 @@ public class PickupItem : MonoBehaviour
     OtherSlot otherSlotScript;
     int pageNumber;
 
-    private void Start()
+    private void Awake()
     {
         inventoryCanvas = GameObject.Find("InventoryCanvas");
         inventory = GameObject.FindGameObjectWithTag("Player");
@@ -41,20 +41,26 @@ public class PickupItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-            if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
+        {
+            if (gameObject.tag == "Letter")
             {
-                if (gameObject.tag== "Letter") 
-                {
-                    pressFText.GetComponent<TMP_Text>().text = "Press F to read page " + pageNumber.ToString();
-                    pressFText.SetActive(true);
-                    inRange = true;
-                } else
-                {
-                    pressFText.GetComponent<TMP_Text>().text = originialPressF + itemName;
-                    pressFText.SetActive(true);
-                    inRange = true;
-                }
+                pressFText.GetComponent<TMP_Text>().text = "Press F to read page " + pageNumber.ToString();
+                pressFText.SetActive(true);
+                inRange = true;
+            } else if (gameObject.tag == "Car Key") 
+            {
+                pressFText.GetComponent<TMP_Text>().text = "Press F to pick up the Car Key";
+                pressFText.SetActive(true);
+                inRange = true;
             }
+            else
+            {
+                pressFText.GetComponent<TMP_Text>().text = originialPressF + itemName;
+                pressFText.SetActive(true);
+                inRange = true;
+            }
+        }
     }
 
     private void Update()
@@ -69,6 +75,7 @@ public class PickupItem : MonoBehaviour
             {
                 slotScript = hotbarSlots.transform.Find("Slot " + itemName).gameObject.GetComponent<Slot>();
                 slotScript.SetStoredObject(gameObject);
+                Debug.Log("Sword");
             }
             else if (itemName == "Shovel")
             {
@@ -99,14 +106,16 @@ public class PickupItem : MonoBehaviour
             {
                 otherSlotScript = otherSlots.transform.Find(itemName).gameObject.GetComponent<OtherSlot>();
                 otherSlotScript.SetCraftSlotObject(gameObject);
+                inventoryScript.acquiredHead = true;
             }
             else if (itemName == "Pickaxe Handle")
             {
                 otherSlotScript = otherSlots.transform.Find(itemName).gameObject.GetComponent<OtherSlot>();
                 otherSlotScript.SetCraftSlotObject(gameObject);
-            } else if(itemName == "Car Key")
+                inventoryScript.acquiredHandle = true;
+            } else if(gameObject.tag == "Car Key")
             {
-                otherSlotScript = otherSlots.transform.Find(itemName).gameObject.GetComponent<OtherSlot>();
+                otherSlotScript = otherSlots.transform.Find("Car Key").gameObject.GetComponent<OtherSlot>();
                 otherSlotScript.SetCraftSlotObject(gameObject);
                 inventoryScript.acquiredCarKeys = true;
             }

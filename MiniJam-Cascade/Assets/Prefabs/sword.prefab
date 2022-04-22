@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 3115943304961126512}
   - component: {fileID: 2058662315812323285}
   - component: {fileID: 4284367118682098463}
+  - component: {fileID: 2721114732189704250}
+  - component: {fileID: 8469534933036868329}
   m_Layer: 0
-  m_Name: sword
-  m_TagString: Untagged
+  m_Name: Sword
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2339018856267688650}
-  m_LocalRotation: {x: -0.46502078, y: 0.5326873, z: -0.5326871, w: 0.4650207}
-  m_LocalPosition: {x: -8.810509, y: 125.597725, z: -30.374178}
-  m_LocalScale: {x: 24.44145, y: 24.44145, z: 24.44145}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
+  m_LocalScale: {x: 24, y: 24, z: 24}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -187.76, y: -90, z: 90}
+  m_LocalEulerAnglesHint: {x: -180, y: -90, z: 90}
 --- !u!33 &2058662315812323285
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -84,3 +86,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2721114732189704250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339018856267688650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fa563e2f2a2fe43b6d9873a0af9a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inRange: 0
+--- !u!65 &8469534933036868329
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339018856267688650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.5, z: 0.8}
+  m_Center: {x: 0, y: 0, z: 0.06403011}

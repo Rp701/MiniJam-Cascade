@@ -13,6 +13,8 @@ TagManager:
   - River
   - Plank
   - EnemyN2
+  - Shovel
+  - Car Key
   layers:
   - Default
   - TransparentFX

@@ -37,6 +37,15 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.tag == "sword" && Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            EnemyHealthHeart -= 5f;
+            Debug.Log(EnemyHealthHeart);
+        }
+    }
+
     void Die()
     {
         float DeathRotationTwo = -90f;
