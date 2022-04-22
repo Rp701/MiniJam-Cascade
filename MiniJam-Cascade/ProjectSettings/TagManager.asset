@@ -12,6 +12,7 @@ TagManager:
   - Letter
   - River
   - Plank
+  - EnemyN2
   layers:
   - Default
   - TransparentFX

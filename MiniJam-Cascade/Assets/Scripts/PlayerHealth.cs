@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
     private float health;
     public Image healthBar;
     public TextMeshProUGUI healthText;
-    public float damageDelay = 0.75f;
+    public float damageDelay = 0.5f;
     public bool takingDamage = false;
 
     [Header("Game Over Variables")]
@@ -80,8 +80,17 @@ public class PlayerHealth : MonoBehaviour
         if (takingDamage == false && health >0)
         {
             //basically don't damage the play if you're already taking damage
-            StartCoroutine(EnemyHit());
+            StartCoroutine(EnemyHit(1));
         }
+    }
+
+    public void TakingDamageTwo()
+    {
+        if(takingDamage == false && health >0)
+        {
+            StartCoroutine(EnemyHit(4));
+        }
+    
     }
 
     private void OnTriggerStay(Collider other)
@@ -90,6 +99,11 @@ public class PlayerHealth : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy"))
         {
             TakingDamage();
+        }
+
+        if(other.gameObject.CompareTag("EnemyN2"))
+        {
+            TakingDamageTwo();
         }
 
         //If the player falls out of the map
@@ -105,9 +119,9 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    IEnumerator EnemyHit()
+    IEnumerator EnemyHit(int damage)
     {
-        health -= 1;
+        health -= damage;
         healthBar.fillAmount = health / startHealth;
 
         StartCoroutine(FlashHit());
