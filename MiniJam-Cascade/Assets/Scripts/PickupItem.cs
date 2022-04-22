@@ -86,7 +86,7 @@ public class PickupItem : MonoBehaviour
             else if (itemName == "Torch")
             {
                 slotScript = TorchHolder.GetComponent<Slot>();
-                
+
                 Instantiate(slotScript.slotItemPrefab, TorchHolder.transform, false);
 
                 Destroy(gameObject);
@@ -104,20 +104,21 @@ public class PickupItem : MonoBehaviour
             }
             else if (itemName == "Pickaxe Head")
             {
+                inventoryScript.acquiredHead = true;
                 otherSlotScript = otherSlots.transform.Find(itemName).gameObject.GetComponent<OtherSlot>();
                 otherSlotScript.SetCraftSlotObject(gameObject);
-                inventoryScript.acquiredHead = true;
             }
             else if (itemName == "Pickaxe Handle")
-            {
+            { 
+                inventoryScript.acquiredHandle = true;
                 otherSlotScript = otherSlots.transform.Find(itemName).gameObject.GetComponent<OtherSlot>();
                 otherSlotScript.SetCraftSlotObject(gameObject);
-                inventoryScript.acquiredHandle = true;
-            } else if(gameObject.tag == "Car Key")
+            } 
+            else if(gameObject.tag == "Car Key")
             {
+                inventoryScript.acquiredCarKeys = true;
                 otherSlotScript = otherSlots.transform.Find("Car Key").gameObject.GetComponent<OtherSlot>();
                 otherSlotScript.SetCraftSlotObject(gameObject);
-                inventoryScript.acquiredCarKeys = true;
             }
             else if (gameObject.tag == "Letter")
             {

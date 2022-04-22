@@ -800,7 +800,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4513873721524032002}
-  - component: {fileID: 4513873721524032003}
   - component: {fileID: 1286579242555434614}
   m_Layer: 0
   m_Name: HandHolder
@@ -823,18 +822,6 @@ Transform:
   m_Father: {fileID: 533491548701130779}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4513873721524032003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4513873721524032005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a616ca6d78e8c5942b77918a548b821b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1286579242555434614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -856,7 +843,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5328854164561527196}
-  - component: {fileID: 6149567856604089632}
   - component: {fileID: 7569478454038973904}
   - component: {fileID: 8895599353411527480}
   m_Layer: 0
@@ -880,18 +866,6 @@ Transform:
   m_Father: {fileID: 4513873721218522498}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6149567856604089632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5463299103418636665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a616ca6d78e8c5942b77918a548b821b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7569478454038973904
 MonoBehaviour:
   m_ObjectHideFlags: 0
