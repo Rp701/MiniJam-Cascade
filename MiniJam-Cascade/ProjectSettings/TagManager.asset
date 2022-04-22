@@ -15,6 +15,7 @@ TagManager:
   - EnemyN2
   - Shovel
   - Car Key
+  - HomeMonster
   layers:
   - Default
   - TransparentFX

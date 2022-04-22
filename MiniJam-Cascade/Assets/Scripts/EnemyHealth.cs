@@ -5,6 +5,10 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
 
+    public GameObject BloodEnemy;
+
+    public GameObject EnemeyCollider;
+
     public float EnemyHealthHeart = 20f;
 
     public bool isDead = false;
@@ -19,7 +23,9 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EnemeyCollider = GameObject.Find("ColliderMonster");
         RotationOfDeath = GeneralDeathRotation;
+        BloodEnemy.SetActive(false);
     }
 
     // Update is called once per frame
@@ -33,18 +39,19 @@ public class EnemyHealth : MonoBehaviour
         if (other.gameObject.tag == "sword")
         {
             EnemyHealthHeart -= 5f;
+            BloodEnemy.SetActive(true);
             Debug.Log(EnemyHealthHeart);
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag == "sword" && Input.GetKeyDown(KeyCode.Mouse0))
+        if (other.gameObject.tag == "sword")
         {
-            EnemyHealthHeart -= 5f;
-            Debug.Log(EnemyHealthHeart);
+            BloodEnemy.SetActive(false);
         }
     }
+
 
     void Die()
     {
@@ -54,6 +61,8 @@ public class EnemyHealth : MonoBehaviour
             RotationOfDeath = DeathRotationTwo;
             gameObject.transform.Rotate(GeneralDeathRotation, 0f, 0f);
             isDead = true;
+            BloodEnemy.SetActive(false);
+            Destroy(EnemeyCollider);
             Destroy(gameObject, 2.5f);
         }
         GeneralDeathRotation = Mathf.Lerp(GeneralDeathRotation, RotationOfDeath, Time.deltaTime * dyingSmooth);

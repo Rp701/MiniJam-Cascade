@@ -18,7 +18,10 @@ public class AiMonster2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Player = GameObject.Find("FirstPersonPlayer");
+        target = Player.transform;
+        homeMonster = GameObject.FindGameObjectWithTag("HomeMonster").transform;
+
     }
 
     // Update is called once per frame
@@ -34,10 +37,9 @@ public class AiMonster2 : MonoBehaviour
         if(Distance < ChaseDistance)
         {
             agent.SetDestination(target.position);
-            Debug.Log("Chase");
             if(Distance <= AttackDistance)
             {
-                Debug.Log("Attacking");
+                //Attacking
             }
         }
         
@@ -48,7 +50,6 @@ public class AiMonster2 : MonoBehaviour
         if(Distance > ChaseDistance)
         {
             agent.SetDestination(homeMonster.position);
-            Debug.Log("Go Home");
 
         }
     }

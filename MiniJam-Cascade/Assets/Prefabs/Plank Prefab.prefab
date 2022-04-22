@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2888935296465677414}
   - component: {fileID: 1149394346047199404}
   - component: {fileID: -5760383766438942686}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Plank Prefab
   m_TagString: Plank
   m_Icon: {fileID: 0}
