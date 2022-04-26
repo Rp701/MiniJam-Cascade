@@ -5,7 +5,7 @@ using UnityEngine;
 public class DisableAfterTime : MonoBehaviour
 {
     public GameObject itemToDisable;
-    public float timer = 0.001f;
+    public float timer = 0.02f;
     private float startTimer;
     public bool resetTimer = false;
 

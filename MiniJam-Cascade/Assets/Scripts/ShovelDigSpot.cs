@@ -11,6 +11,7 @@ public class ShovelDigSpot : MonoBehaviour
     GameObject currentHandItem;
     private GameObject DropItem;
     public GameObject DropPrefab;
+    public Vector3 Dig;
 
     void Start()
     {
@@ -67,7 +68,7 @@ public class ShovelDigSpot : MonoBehaviour
                     if (isUnlocked && Input.GetKeyDown(KeyCode.Mouse0))
                     {
                         Debug.Log("Digged");
-                        DropItem = Instantiate(DropPrefab, new Vector3(-40, 2, 0), Quaternion.identity);
+                        DropItem = Instantiate(DropPrefab, Dig, Quaternion.identity);
                         DropItem.name = "Car Key";
                         DropItem.transform.parent = null;
 

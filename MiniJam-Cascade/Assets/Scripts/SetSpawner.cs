@@ -9,7 +9,7 @@ public class SetSpawner : MonoBehaviour
 
     void Awake()
     {
-        Spawner = GameObject.Find("Sphere");
+        Spawner = GameObject.Find("SphereSpawner");
         Spawner.GetComponent<EnemySpawner>().enabled = false;
         StartCoroutine(StartSpawner());
     }
@@ -25,7 +25,7 @@ public class SetSpawner : MonoBehaviour
 
     public IEnumerator StartSpawner()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(30);
         Spawner.GetComponent<EnemySpawner>().enabled = true;
         CanThenStop = true;
         Debug.Log("StartSpawn");
@@ -34,7 +34,7 @@ public class SetSpawner : MonoBehaviour
 
     public IEnumerator CanStopSapwning()
     {
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(40);
         Destroy(Spawner);
         Debug.Log("StopSpawn");
         CanThenStop = false;

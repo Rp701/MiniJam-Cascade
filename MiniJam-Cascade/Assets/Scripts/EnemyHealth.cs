@@ -34,6 +34,13 @@ public class EnemyHealth : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "sword" && Input.GetMouseButton(0))
+        {
+            EnemyHealthHeart -= 5f;
+            BloodEnemy.SetActive(true);
+            Debug.Log(EnemyHealthHeart);
+        }
+
         if (other.gameObject.tag == "sword")
         {
             EnemyHealthHeart -= 5f;

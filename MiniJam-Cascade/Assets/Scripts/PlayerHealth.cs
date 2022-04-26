@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     public float damageDelay = 0.5f;
     public bool takingDamage = false;
 
+    public AiMonster3 Monster;
+
     [Header("Game Over Variables")]
     public GameObject blackFadeImage;
     public GameObject gameOverText;
@@ -22,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject fellInRiver;
     public GameObject redDamageImage;
     public GameObject gameOverButtons;
+    public GameObject LabyrinthFall;
 
     private void Start()
     {
@@ -35,6 +38,11 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             DiedToEnemy();
+        }
+
+        if(Monster.Attack == true)
+        {
+            TakingDamageTwo();
         }
     }
 
@@ -68,12 +76,22 @@ public class PlayerHealth : MonoBehaviour
         gameOverButtons.SetActive(true);
     }
 
+    public void LabyrinthDie()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        gameOverText.SetActive(true);
+        blackFadeImage.SetActive(true);
+        LabyrinthFall.SetActive(true);
+        gameOverButtons.SetActive(true);
+    }
+
     public void TakingDamage()
     {
         if (takingDamage == false && health >0)
         {
             //basically don't damage the play if you're already taking damage
-            StartCoroutine(EnemyHit(1));
+            StartCoroutine(EnemyHit(3));
         }
     }
 
@@ -81,7 +99,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(takingDamage == false && health >0)
         {
-            StartCoroutine(EnemyHit(4));
+            StartCoroutine(EnemyHit(8));
         }
     
     }
@@ -110,7 +128,16 @@ public class PlayerHealth : MonoBehaviour
         {
             FellInRiver();
         }
+
+        if(other.gameObject.CompareTag("LabyrinthDie"))
+        {
+            LabyrinthDie();
+        }
+
+
     }
+
+
 
     IEnumerator EnemyHit(int damage)
     {
