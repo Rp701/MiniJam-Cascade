@@ -5,11 +5,13 @@ public class Letter : MonoBehaviour
     public int pageNumber;
     GameObject DiaryPages;
     GameObject hotbar;
+    GameManager gameManagerScript;
 
     private void Start()
     {
         hotbar = GameObject.Find("Hotbar");
         DiaryPages = GameObject.Find("DiaryPages");
+        gameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     public void OpenPage()
@@ -19,7 +21,7 @@ public class Letter : MonoBehaviour
         Time.timeScale = 0f;
         hotbar.SetActive(false);
         DiaryPages.transform.GetChild(pageNumber-1).gameObject.SetActive(true);
-        GameObject.Find("GameManager").GetComponent<GameManager>().isGamePaused = true;
+        gameManagerScript.isLetterOpen = true;
     }
     public void ClosePage()
     {
@@ -28,6 +30,6 @@ public class Letter : MonoBehaviour
         Time.timeScale = 1f;
         hotbar.SetActive(true);
         DiaryPages.transform.GetChild(pageNumber - 1).gameObject.SetActive(false);
-        GameObject.Find("GameManager").GetComponent<GameManager>().isGamePaused = false;
+        gameManagerScript.isLetterOpen = false;
     }
 }
