@@ -12,6 +12,9 @@ public class AiMonster3 : MonoBehaviour
     public float AttackDistance;
     public float ChaseDistance;
     public bool Attack;
+    public bool CaneGetActive = false;
+
+    public MonsterREset resetting;
     
 
 
@@ -34,6 +37,18 @@ public class AiMonster3 : MonoBehaviour
         Distance = Vector3.Distance(Monster.transform.position, Player.transform.position);
         MoveToTarget();
         MoveToHome();
+        if(resetting.CanReset)
+        {
+            agent.GetComponent<NavMeshAgent>().enabled = false;
+            StartCoroutine(ResetAgent());
+        }
+    }
+
+    public IEnumerator ResetAgent()
+    {
+        yield return new WaitForSeconds(5);
+        agent.GetComponent<NavMeshAgent>().enabled = true;
+        resetting.CanReset = false;
     }
 
     void MoveToTarget()

@@ -10,6 +10,8 @@ public class BreakingRocks : MonoBehaviour
 
     public MeshRenderer PLS;
 
+    public Collider ObjectCollider;
+
     public GameObject Text;
 
     public bool CanBreak = false;
@@ -18,7 +20,7 @@ public class BreakingRocks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        ObjectCollider = GetComponent<Collider>();
     }
 
     void OnTriggerStay(Collider other)
@@ -33,6 +35,7 @@ public class BreakingRocks : MonoBehaviour
             RockCells.SetActive(true);
             StartCoroutine(DestroyObjects());
             CanBreak = true;
+            ObjectCollider.isTrigger = true;
             
         }
     }

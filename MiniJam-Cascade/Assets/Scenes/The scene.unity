@@ -1150,6 +1150,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29287109}
   m_CullTransparentMesh: 1
+--- !u!1 &35429954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: c2d9bf5c68bcb4ad98ef5dc99c95f769, type: 3}
+  m_PrefabInstance: {fileID: 1071858255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &35429958
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35429954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: c2d9bf5c68bcb4ad98ef5dc99c95f769, type: 3}
 --- !u!1001 &37746586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1261,6 +1280,7 @@ MonoBehaviour:
   RockShape: {fileID: 37746588}
   RockCells: {fileID: 1292006613}
   PLS: {fileID: 37746589}
+  ObjectCollider: {fileID: 37746591}
   Text: {fileID: 11120936}
   CanBreak: 0
 --- !u!64 &37746591
@@ -1483,6 +1503,7 @@ MonoBehaviour:
   RockShape: {fileID: 38985895}
   RockCells: {fileID: 1956395932}
   PLS: {fileID: 38985896}
+  ObjectCollider: {fileID: 38985898}
   Text: {fileID: 229981141}
   CanBreak: 0
 --- !u!64 &38985898
@@ -2056,6 +2077,7 @@ MonoBehaviour:
   RockShape: {fileID: 62082687}
   RockCells: {fileID: 1653949189}
   PLS: {fileID: 62082688}
+  ObjectCollider: {fileID: 62082690}
   Text: {fileID: 497964639}
   CanBreak: 0
 --- !u!64 &62082690
@@ -2663,6 +2685,7 @@ MonoBehaviour:
   RockShape: {fileID: 127594416}
   RockCells: {fileID: 1433643810}
   PLS: {fileID: 127594417}
+  ObjectCollider: {fileID: 127594419}
   Text: {fileID: 2026600484}
   CanBreak: 0
 --- !u!64 &127594419
@@ -4501,6 +4524,7 @@ MonoBehaviour:
   RockShape: {fileID: 176955612}
   RockCells: {fileID: 1634919781}
   PLS: {fileID: 176955613}
+  ObjectCollider: {fileID: 176955615}
   Text: {fileID: 1595680893}
   CanBreak: 0
 --- !u!64 &176955615
@@ -4764,6 +4788,7 @@ MonoBehaviour:
   RockShape: {fileID: 183265200}
   RockCells: {fileID: 2101064579}
   PLS: {fileID: 183265201}
+  ObjectCollider: {fileID: 183265203}
   Text: {fileID: 1758625377}
   CanBreak: 0
 --- !u!64 &183265203
@@ -5216,6 +5241,25 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &219774396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6733177361254619370, guid: c2d9bf5c68bcb4ad98ef5dc99c95f769, type: 3}
+  m_PrefabInstance: {fileID: 1071858255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &219774400
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219774396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8691780276856062721, guid: c2d9bf5c68bcb4ad98ef5dc99c95f769, type: 3}
 --- !u!1 &222029402
 GameObject:
   m_ObjectHideFlags: 0
@@ -5226,7 +5270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 222029403}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: RocksWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5288,7 +5332,7 @@ Transform:
   - {fileID: 303187292}
   - {fileID: 2124527563}
   m_Father: {fileID: 0}
-  m_RootOrder: 48
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &227740926
 PrefabInstance:
@@ -6036,7 +6080,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 47
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &261699221 stripped
 GameObject:
@@ -6073,6 +6117,117 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &268538125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 268538130}
+  - component: {fileID: 268538129}
+  - component: {fileID: 268538128}
+  - component: {fileID: 268538127}
+  - component: {fileID: 268538126}
+  m_Layer: 0
+  m_Name: MonsterREset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &268538126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268538125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528bdd857f10c45f4b10f0536de0a458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Monster: {fileID: 811114262}
+  MonsterHouse: {fileID: 1553204716}
+  CanReset: 0
+--- !u!65 &268538127
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268538125}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &268538128
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268538125}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &268538129
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268538125}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &268538130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268538125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 97.5, y: 69.5, z: -681.347}
+  m_LocalScale: {x: 160.56252, y: 160.56252, z: 160.56252}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 51
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &275318420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6632,6 +6787,7 @@ MonoBehaviour:
   RockShape: {fileID: 288297146}
   RockCells: {fileID: 293790145}
   PLS: {fileID: 288297147}
+  ObjectCollider: {fileID: 288297149}
   Text: {fileID: 846556923}
   CanBreak: 0
 --- !u!64 &288297149
@@ -7324,6 +7480,7 @@ MonoBehaviour:
   RockShape: {fileID: 303187293}
   RockCells: {fileID: 1235734970}
   PLS: {fileID: 303187294}
+  ObjectCollider: {fileID: 303187296}
   Text: {fileID: 1635634121}
   CanBreak: 0
 --- !u!64 &303187296
@@ -13380,6 +13537,7 @@ MonoBehaviour:
   RockShape: {fileID: 567822634}
   RockCells: {fileID: 1587126598}
   PLS: {fileID: 567822635}
+  ObjectCollider: {fileID: 567822637}
   Text: {fileID: 2036974113}
   CanBreak: 0
 --- !u!64 &567822637
@@ -15852,6 +16010,7 @@ MonoBehaviour:
   RockShape: {fileID: 668021900}
   RockCells: {fileID: 1921420760}
   PLS: {fileID: 668021901}
+  ObjectCollider: {fileID: 668021903}
   Text: {fileID: 2038909833}
   CanBreak: 0
 --- !u!64 &668021903
@@ -17188,6 +17347,7 @@ MonoBehaviour:
   RockShape: {fileID: 705066874}
   RockCells: {fileID: 20968828}
   PLS: {fileID: 705066875}
+  ObjectCollider: {fileID: 705066877}
   Text: {fileID: 871142225}
   CanBreak: 0
 --- !u!64 &705066877
@@ -17622,6 +17782,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 26fb55e8ae34728499f6f45cd0527c73, type: 3}
+--- !u!1 &719014654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8700725330082129686, guid: c2d9bf5c68bcb4ad98ef5dc99c95f769, type: 3}
+  m_PrefabInstance: {fileID: 1071858255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &719014658
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719014654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6239881831769578202, guid: c2d9bf5c68bcb4ad98ef5dc99c95f769, type: 3}
 --- !u!1 &720203159
 GameObject:
   m_ObjectHideFlags: 0
@@ -17671,7 +17850,7 @@ Transform:
   - {fileID: 1953870938}
   - {fileID: 1370791044}
   m_Father: {fileID: 0}
-  m_RootOrder: 49
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &733554849
 PrefabInstance:
@@ -19144,6 +19323,7 @@ MonoBehaviour:
   RockShape: {fileID: 781887001}
   RockCells: {fileID: 1338277271}
   PLS: {fileID: 781887002}
+  ObjectCollider: {fileID: 781887004}
   Text: {fileID: 1375510849}
   CanBreak: 0
 --- !u!64 &781887004
@@ -19489,6 +19669,7 @@ MonoBehaviour:
   RockShape: {fileID: 793253874}
   RockCells: {fileID: 379933789}
   PLS: {fileID: 793253875}
+  ObjectCollider: {fileID: 793253877}
   Text: {fileID: 1469390913}
   CanBreak: 0
 --- !u!64 &793253877
@@ -19532,6 +19713,101 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 145c3f8d1933d0646a6858cd8f94d80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &798062926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 798062930}
+  - component: {fileID: 798062929}
+  - component: {fileID: 798062928}
+  - component: {fileID: 798062927}
+  m_Layer: 0
+  m_Name: Block Labyrinth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &798062927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798062926}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &798062928
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798062926}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &798062929
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798062926}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &798062930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798062926}
+  m_LocalRotation: {x: -0, y: -0.3275269, z: -0, w: 0.94484186}
+  m_LocalPosition: {x: 86.5, y: 106, z: -233.3}
+  m_LocalScale: {x: 128.9497, y: 10.840657, z: 10.840657}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 53
+  m_LocalEulerAnglesHint: {x: 0, y: -38.237, z: 0}
 --- !u!1001 &799856208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19910,8 +20186,10 @@ MonoBehaviour:
   homeMonster: {fileID: 1553204717}
   Distance: 0
   AttackDistance: 35
-  ChaseDistance: 960
+  ChaseDistance: 1102
   Attack: 0
+  CaneGetActive: 0
+  resetting: {fileID: 268538126}
   Monster: {fileID: 811114262}
   Player: {fileID: 1486597034}
 --- !u!4 &816007782 stripped
@@ -21463,7 +21741,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 51
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &862587476 stripped
 GameObject:
@@ -21993,6 +22271,7 @@ MonoBehaviour:
   RockShape: {fileID: 865015041}
   RockCells: {fileID: 132993114}
   PLS: {fileID: 865015042}
+  ObjectCollider: {fileID: 865015044}
   Text: {fileID: 531533892}
   CanBreak: 0
 --- !u!64 &865015044
@@ -22959,6 +23238,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 3d0fed258ed2a4fc68205a86f72cd76f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d0fed258ed2a4fc68205a86f72cd76f, type: 3}
 --- !u!1 &905097214 stripped
@@ -23291,6 +23574,101 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4838067341564878, guid: 39de80c7e7a1a2942820576875608e5d, type: 3}
   m_PrefabInstance: {fileID: 910414873}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &918835538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 918835542}
+  - component: {fileID: 918835541}
+  - component: {fileID: 918835540}
+  - component: {fileID: 918835539}
+  m_Layer: 0
+  m_Name: BlockJumpRiver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &918835539
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918835538}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &918835540
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918835538}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &918835541
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918835538}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &918835542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918835538}
+  m_LocalRotation: {x: -0, y: 0.03144807, z: -0, w: 0.9995054}
+  m_LocalPosition: {x: 49.69, y: 125.2, z: 164.83}
+  m_LocalScale: {x: 21.759, y: 27.083628, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 52
+  m_LocalEulerAnglesHint: {x: 0, y: 3.604, z: 0}
 --- !u!1 &919400673 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1927372005322154, guid: 39de80c7e7a1a2942820576875608e5d, type: 3}
@@ -24358,6 +24736,7 @@ MonoBehaviour:
   RockShape: {fileID: 992306862}
   RockCells: {fileID: 321712713}
   PLS: {fileID: 992306866}
+  ObjectCollider: {fileID: 992306864}
   Text: {fileID: 532830070}
   CanBreak: 0
 --- !u!64 &992306864
@@ -24697,6 +25076,7 @@ MonoBehaviour:
   RockShape: {fileID: 1022727788}
   RockCells: {fileID: 682437786}
   PLS: {fileID: 1022727789}
+  ObjectCollider: {fileID: 1022727791}
   Text: {fileID: 639783269}
   CanBreak: 0
 --- !u!64 &1022727791
@@ -25460,6 +25840,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e83c351d569264138a679355809ecfbe, type: 3}
   m_PrefabInstance: {fileID: 338956555}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1049487354 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8380157826906577798, guid: c2d9bf5c68bcb4ad98ef5dc99c95f769, type: 3}
+  m_PrefabInstance: {fileID: 1071858255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1049487358
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049487354}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6255687079079774844, guid: c2d9bf5c68bcb4ad98ef5dc99c95f769, type: 3}
 --- !u!1001 &1053353260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25672,6 +26071,7 @@ MonoBehaviour:
   RockShape: {fileID: 1061254497}
   RockCells: {fileID: 1365218177}
   PLS: {fileID: 1061254498}
+  ObjectCollider: {fileID: 1061254500}
   Text: {fileID: 38903888}
   CanBreak: 0
 --- !u!64 &1061254500
@@ -26774,6 +27174,7 @@ MonoBehaviour:
   RockShape: {fileID: 1120515736}
   RockCells: {fileID: 584433915}
   PLS: {fileID: 1120515737}
+  ObjectCollider: {fileID: 1120515739}
   Text: {fileID: 1351127401}
   CanBreak: 0
 --- !u!64 &1120515739
@@ -28359,6 +28760,7 @@ MonoBehaviour:
   RockShape: {fileID: 1184836495}
   RockCells: {fileID: 1269745343}
   PLS: {fileID: 1184836496}
+  ObjectCollider: {fileID: 1184836498}
   Text: {fileID: 1224088216}
   CanBreak: 0
 --- !u!64 &1184836498
@@ -29729,6 +30131,7 @@ MonoBehaviour:
   RockShape: {fileID: 1246942007}
   RockCells: {fileID: 2043787660}
   PLS: {fileID: 1246942008}
+  ObjectCollider: {fileID: 1246942010}
   Text: {fileID: 1429918098}
   CanBreak: 0
 --- !u!64 &1246942010
@@ -30547,6 +30950,7 @@ MonoBehaviour:
   RockShape: {fileID: 1275141032}
   RockCells: {fileID: 1800820291}
   PLS: {fileID: 1275141033}
+  ObjectCollider: {fileID: 1275141035}
   Text: {fileID: 1845685101}
   CanBreak: 0
 --- !u!64 &1275141035
@@ -30690,6 +31094,7 @@ MonoBehaviour:
   RockShape: {fileID: 1276213814}
   RockCells: {fileID: 1623978928}
   PLS: {fileID: 1276213815}
+  ObjectCollider: {fileID: 1276213817}
   Text: {fileID: 2059091823}
   CanBreak: 0
 --- !u!64 &1276213817
@@ -31867,6 +32272,7 @@ MonoBehaviour:
   RockShape: {fileID: 1293446700}
   RockCells: {fileID: 847016704}
   PLS: {fileID: 1293446701}
+  ObjectCollider: {fileID: 1293446703}
   Text: {fileID: 1787111430}
   CanBreak: 0
 --- !u!64 &1293446703
@@ -32111,6 +32517,7 @@ MonoBehaviour:
   RockShape: {fileID: 1303561212}
   RockCells: {fileID: 131775419}
   PLS: {fileID: 1303561213}
+  ObjectCollider: {fileID: 1303561215}
   Text: {fileID: 1502633996}
   CanBreak: 0
 --- !u!64 &1303561215
@@ -32300,101 +32707,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5eb141c31f3b34a69901d686cd6f0a46, type: 3}
---- !u!1 &1317811499
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1317811503}
-  - component: {fileID: 1317811502}
-  - component: {fileID: 1317811501}
-  - component: {fileID: 1317811500}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: sword
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1317811500
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317811499}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1317811501
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317811499}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1317811502
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317811499}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1317811503
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317811499}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.1, y: 137.7, z: 25.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 45
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1318160313 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8421033217739148184, guid: fe30cb36ad34a4b4da36ef0effc708fb, type: 3}
@@ -32541,6 +32853,7 @@ MonoBehaviour:
   RockShape: {fileID: 1325050210}
   RockCells: {fileID: 1184426040}
   PLS: {fileID: 1325050211}
+  ObjectCollider: {fileID: 1325050213}
   Text: {fileID: 1476550614}
   CanBreak: 0
 --- !u!64 &1325050213
@@ -32775,6 +33088,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39de80c7e7a1a2942820576875608e5d, type: 3}
+--- !u!1 &1337983091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8513859187771203891, guid: c2d9bf5c68bcb4ad98ef5dc99c95f769, type: 3}
+  m_PrefabInstance: {fileID: 1071858255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1337983095
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337983091}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7387706064836869012, guid: c2d9bf5c68bcb4ad98ef5dc99c95f769, type: 3}
 --- !u!1001 &1338277261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34488,6 +34820,7 @@ MonoBehaviour:
   RockShape: {fileID: 1389945620}
   RockCells: {fileID: 337109816}
   PLS: {fileID: 1389945621}
+  ObjectCollider: {fileID: 1389945623}
   Text: {fileID: 652625401}
   CanBreak: 0
 --- !u!64 &1389945623
@@ -35015,6 +35348,7 @@ MonoBehaviour:
   RockShape: {fileID: 1424963779}
   RockCells: {fileID: 2031360677}
   PLS: {fileID: 1424963780}
+  ObjectCollider: {fileID: 1424963782}
   Text: {fileID: 29287109}
   CanBreak: 0
 --- !u!64 &1424963782
@@ -36013,6 +36347,7 @@ MonoBehaviour:
   RockShape: {fileID: 1444572679}
   RockCells: {fileID: 1854947703}
   PLS: {fileID: 1444572680}
+  ObjectCollider: {fileID: 1444572682}
   Text: {fileID: 1423406399}
   CanBreak: 0
 --- !u!64 &1444572682
@@ -36771,7 +37106,7 @@ GameObject:
   - component: {fileID: 1457128241}
   m_Layer: 0
   m_Name: Death Area Bottom
-  m_TagString: Untagged
+  m_TagString: FloorKill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36801,7 +37136,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 46
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1459451120 stripped
 GameObject:
@@ -37490,6 +37825,7 @@ MonoBehaviour:
   RockShape: {fileID: 1480849405}
   RockCells: {fileID: 608336400}
   PLS: {fileID: 1480849406}
+  ObjectCollider: {fileID: 1480849408}
   Text: {fileID: 1365147338}
   CanBreak: 0
 --- !u!64 &1480849408
@@ -38225,6 +38561,7 @@ MonoBehaviour:
   RockShape: {fileID: 1514970946}
   RockCells: {fileID: 560536538}
   PLS: {fileID: 1514970947}
+  ObjectCollider: {fileID: 1514970949}
   Text: {fileID: 122065153}
   CanBreak: 0
 --- !u!64 &1514970949
@@ -38281,6 +38618,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4838067341564878, guid: 39de80c7e7a1a2942820576875608e5d, type: 3}
   m_PrefabInstance: {fileID: 172536335}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1529842313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2800250516343163423, guid: c2d9bf5c68bcb4ad98ef5dc99c95f769, type: 3}
+  m_PrefabInstance: {fileID: 1071858255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1529842317
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529842313}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3390558720134950976, guid: c2d9bf5c68bcb4ad98ef5dc99c95f769, type: 3}
 --- !u!1 &1535679017
 GameObject:
   m_ObjectHideFlags: 0
@@ -39530,6 +39886,7 @@ MonoBehaviour:
   RockShape: {fileID: 1576314462}
   RockCells: {fileID: 1547681682}
   PLS: {fileID: 1576314463}
+  ObjectCollider: {fileID: 1576314465}
   Text: {fileID: 235415675}
   CanBreak: 0
 --- !u!64 &1576314465
@@ -42469,6 +42826,7 @@ MonoBehaviour:
   RockShape: {fileID: 1671822343}
   RockCells: {fileID: 275318430}
   PLS: {fileID: 1671822344}
+  ObjectCollider: {fileID: 1671822346}
   Text: {fileID: 1858423264}
   CanBreak: 0
 --- !u!64 &1671822346
@@ -43084,6 +43442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d4c436323be3648bfea77091dcc3ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InvisibleWallOne: {fileID: 918835538}
 --- !u!65 &1705395049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43257,6 +43616,7 @@ MonoBehaviour:
   RockShape: {fileID: 1708860152}
   RockCells: {fileID: 548722894}
   PLS: {fileID: 1708860153}
+  ObjectCollider: {fileID: 1708860155}
   Text: {fileID: 2089562066}
   CanBreak: 0
 --- !u!64 &1708860155
@@ -43671,6 +44031,7 @@ MonoBehaviour:
   RockShape: {fileID: 1716295320}
   RockCells: {fileID: 1033906846}
   PLS: {fileID: 1716295321}
+  ObjectCollider: {fileID: 1716295323}
   Text: {fileID: 1913879193}
   CanBreak: 0
 --- !u!64 &1716295323
@@ -43893,6 +44254,7 @@ MonoBehaviour:
   RockShape: {fileID: 1717992421}
   RockCells: {fileID: 2052653884}
   PLS: {fileID: 1717992422}
+  ObjectCollider: {fileID: 1717992424}
   Text: {fileID: 1717838311}
   CanBreak: 0
 --- !u!64 &1717992424
@@ -44285,6 +44647,7 @@ MonoBehaviour:
   RockShape: {fileID: 1725789664}
   RockCells: {fileID: 639109664}
   PLS: {fileID: 1725789669}
+  ObjectCollider: {fileID: 1725789667}
   Text: {fileID: 1978765264}
   CanBreak: 0
 --- !u!64 &1725789667
@@ -44774,8 +45137,27 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 50
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1752885467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7029948723529949830, guid: c2d9bf5c68bcb4ad98ef5dc99c95f769, type: 3}
+  m_PrefabInstance: {fileID: 1071858255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1752885471
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752885467}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -462981019419857548, guid: c2d9bf5c68bcb4ad98ef5dc99c95f769, type: 3}
 --- !u!1001 &1756668890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45169,6 +45551,7 @@ MonoBehaviour:
   RockShape: {fileID: 1768663125}
   RockCells: {fileID: 524652015}
   PLS: {fileID: 1768663126}
+  ObjectCollider: {fileID: 1768663128}
   Text: {fileID: 238485115}
   CanBreak: 0
 --- !u!64 &1768663128
@@ -47783,6 +48166,7 @@ MonoBehaviour:
   RockShape: {fileID: 1887836275}
   RockCells: {fileID: 733554859}
   PLS: {fileID: 1887836276}
+  ObjectCollider: {fileID: 1887836278}
   Text: {fileID: 108925021}
   CanBreak: 0
 --- !u!64 &1887836278
@@ -48100,6 +48484,7 @@ MonoBehaviour:
   RockShape: {fileID: 1888726870}
   RockCells: {fileID: 513668012}
   PLS: {fileID: 1888726871}
+  ObjectCollider: {fileID: 1888726873}
   Text: {fileID: 647911673}
   CanBreak: 0
 --- !u!64 &1888726873
@@ -50031,6 +50416,7 @@ MonoBehaviour:
   RockShape: {fileID: 1974725650}
   RockCells: {fileID: 702242328}
   PLS: {fileID: 1974725651}
+  ObjectCollider: {fileID: 1974725653}
   Text: {fileID: 903546034}
   CanBreak: 0
 --- !u!64 &1974725653
@@ -50354,6 +50740,7 @@ MonoBehaviour:
   RockShape: {fileID: 1983583506}
   RockCells: {fileID: 2050698613}
   PLS: {fileID: 1983583507}
+  ObjectCollider: {fileID: 1983583509}
   Text: {fileID: 1688588066}
   CanBreak: 0
 --- !u!64 &1983583509
@@ -51985,6 +52372,7 @@ MonoBehaviour:
   RockShape: {fileID: 2045296331}
   RockCells: {fileID: 1448314673}
   PLS: {fileID: 2045296332}
+  ObjectCollider: {fileID: 2045296334}
   Text: {fileID: 1884660715}
   CanBreak: 0
 --- !u!64 &2045296334
@@ -53445,6 +53833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d4c436323be3648bfea77091dcc3ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InvisibleWallOne: {fileID: 0}
 --- !u!1 &2086024784 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e83c351d569264138a679355809ecfbe, type: 3}
@@ -54808,6 +55197,7 @@ MonoBehaviour:
   RockShape: {fileID: 2124527564}
   RockCells: {fileID: 862732819}
   PLS: {fileID: 2124527565}
+  ObjectCollider: {fileID: 2124527567}
   Text: {fileID: 1738130250}
   CanBreak: 0
 --- !u!64 &2124527567
@@ -55044,6 +55434,7 @@ MonoBehaviour:
   RockShape: {fileID: 2130329997}
   RockCells: {fileID: 825583194}
   PLS: {fileID: 2130329998}
+  ObjectCollider: {fileID: 2130330000}
   Text: {fileID: 1035128507}
   CanBreak: 0
 --- !u!64 &2130330000

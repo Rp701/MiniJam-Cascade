@@ -7,6 +7,7 @@ public class PlacePlank : MonoBehaviour
     GameObject Canvas;
     GameObject HandHolder;
     GameObject currentHandItem;
+    public GameObject InvisibleWallOne;
     
     void Start()
     {
@@ -63,6 +64,7 @@ public class PlacePlank : MonoBehaviour
                     {
                         gameObject.transform.Find("PlacePlank").gameObject.SetActive(true);
                         gameObject.transform.Find("PlacePlank").gameObject.transform.parent = GameObject.Find("River Planks").transform;
+                        InvisibleWallOne.SetActive(false);
 
                         Destroy(gameObject);
                     }
