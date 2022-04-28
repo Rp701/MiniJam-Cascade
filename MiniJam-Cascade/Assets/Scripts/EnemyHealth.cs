@@ -8,7 +8,8 @@ public class EnemyHealth : MonoBehaviour
     public GameObject BloodEnemy;
 
     public GameObject EnemyColliderObject;
-    private BoxCollider EnemyCollider;
+
+    public bool CanGetDamage = true;
 
     public float EnemyHealthHeart = 20f;
 
@@ -32,29 +33,24 @@ public class EnemyHealth : MonoBehaviour
         Die();
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "sword" && Input.GetMouseButton(0))
+        if (other.gameObject.tag == "sword" && Input.GetMouseButton(0) && CanGetDamage)
         {
             EnemyHealthHeart -= 5f;
             BloodEnemy.SetActive(true);
             Debug.Log(EnemyHealthHeart);
-        }
-
-        if (other.gameObject.tag == "sword")
-        {
-            EnemyHealthHeart -= 5f;
-            BloodEnemy.SetActive(true);
-            Debug.Log(EnemyHealthHeart);
+            CanGetDamage = false;
+            StartCoroutine(AvoidMultipleDamage());
         }
     }
 
-    void OnTriggerExit(Collider other)
+    public IEnumerator AvoidMultipleDamage()
     {
-        if (other.gameObject.tag == "sword")
-        {
-            BloodEnemy.SetActive(false);
-        }
+        yield return new WaitForSeconds(0.5f);
+        BloodEnemy.SetActive(false);
+        CanGetDamage = true;
+
     }
 
 
@@ -67,7 +63,7 @@ public class EnemyHealth : MonoBehaviour
             gameObject.transform.Rotate(GeneralDeathRotation, 0f, 0f);
             isDead = true;
             BloodEnemy.SetActive(false);
-            Destroy(EnemyColliderObject);
+            EnemyColliderObject.SetActive(false);
             Destroy(gameObject, 2.5f);
         }
         GeneralDeathRotation = Mathf.Lerp(GeneralDeathRotation, RotationOfDeath, Time.deltaTime * dyingSmooth);

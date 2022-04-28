@@ -566,6 +566,7 @@ MonoBehaviour:
   ChaseDistance: 960
   Monster: {fileID: 3054810406939766557}
   Player: {fileID: 0}
+  EnemyScript: {fileID: 5324494064821392221}
 --- !u!54 &3054810406939766556
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -596,6 +597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BloodEnemy: {fileID: 2380973842848155876}
   EnemyColliderObject: {fileID: 0}
+  CanGetDamage: 1
   EnemyHealthHeart: 20
   isDead: 0
   dyingSmooth: 2.5

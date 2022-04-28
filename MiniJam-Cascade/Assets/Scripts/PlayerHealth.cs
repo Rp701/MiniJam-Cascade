@@ -8,11 +8,12 @@ public class PlayerHealth : MonoBehaviour
 {
     [Header("Health Stuff")]
     public float startHealth;
-    private float health;
+    public float health;
     public Image healthBar;
     public TextMeshProUGUI healthText;
     public float damageDelay = 0.5f;
     public bool takingDamage = false;
+    public bool CanGetHeal = false;
 
     public AiMonster3 Monster;
 
@@ -43,6 +44,22 @@ public class PlayerHealth : MonoBehaviour
         if(Monster.Attack == true)
         {
             TakingDamageTwo();
+        }
+
+        if(health < startHealth)
+        {
+            CanGetHeal = true;
+        }
+
+        if(health >= startHealth)
+        {
+            health = startHealth;
+            CanGetHeal = false;
+        }
+
+        if(health < 0f)
+        {
+            health = 0;
         }
     }
 
@@ -102,6 +119,17 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(EnemyHit(8));
         }
     
+    }
+
+    public void HealingOne()
+    {
+        health += 5f;
+        healthBar.fillAmount = health / startHealth;
+        healthText.text = "Health: " + health.ToString();
+        if(health >= startHealth)
+        {
+            healthText.text = "Health: " + startHealth.ToString();
+        }
     }
 
     private void OnTriggerStay(Collider other)

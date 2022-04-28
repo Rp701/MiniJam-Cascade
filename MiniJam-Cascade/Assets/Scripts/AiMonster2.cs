@@ -14,6 +14,7 @@ public class AiMonster2 : MonoBehaviour
 
     public GameObject Monster;
     public GameObject Player;
+    public EnemyHealth EnemyScript;
     
     // Start is called before the first frame update
     void Start()

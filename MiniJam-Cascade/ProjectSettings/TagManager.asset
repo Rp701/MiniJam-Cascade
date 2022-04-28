@@ -17,6 +17,7 @@ TagManager:
   - Car Key
   - HomeMonster
   - LabyrinthDie
+  - Drill
   layers:
   - Default
   - TransparentFX

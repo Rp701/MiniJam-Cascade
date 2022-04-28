@@ -27,7 +27,7 @@ public class AiMonster3 : MonoBehaviour
         Player = GameObject.Find("FirstPersonPlayer");
         target = Player.transform;
         homeMonster = GameObject.FindGameObjectWithTag("HomeMonster").transform;
-        InvokeRepeating ("ChangeSpeed", 5.0f, 7.5f);
+        InvokeRepeating ("ChangeSpeed", 5.0f, 1.5f);
 
     }
 
@@ -82,7 +82,7 @@ public class AiMonster3 : MonoBehaviour
 
     void ChangeSpeed()
     {
-        GetComponent<NavMeshAgent>().speed = Random.Range(39.6f, 50.4f);
+        GetComponent<NavMeshAgent>().speed = Random.Range(37.6f, 44.8f);
     }
 
 
