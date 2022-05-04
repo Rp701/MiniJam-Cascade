@@ -258,7 +258,6 @@ GameObject:
   - component: {fileID: 1277926863}
   - component: {fileID: 1277926862}
   - component: {fileID: 1277926861}
-  - component: {fileID: 1277926860}
   m_Layer: 5
   m_Name: PlayAgainButton
   m_TagString: Untagged
@@ -285,19 +284,6 @@ RectTransform:
   m_AnchoredPosition: {x: 350, y: 0}
   m_SizeDelta: {x: 300, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1277926860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277926858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e474213152194196e351a3fd4d4a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: N/A
 --- !u!114 &1277926861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -868,8 +854,8 @@ GameObject:
   - component: {fileID: 510282985702361422}
   - component: {fileID: 510282985702361426}
   - component: {fileID: 510282985702361421}
-  - component: {fileID: 510282985702361420}
   - component: {fileID: 510282985702361423}
+  - component: {fileID: 510282985702361420}
   m_Layer: 5
   m_Name: CreditsButton
   m_TagString: Untagged
@@ -1415,7 +1401,6 @@ GameObject:
   - component: {fileID: 510282987288689881}
   - component: {fileID: 510282987288689880}
   - component: {fileID: 510282987288689883}
-  - component: {fileID: 510282987288689882}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -1539,19 +1524,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510282987288689876}
   m_CullTransparentMesh: 1
---- !u!114 &510282987288689882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510282987288689876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e474213152194196e351a3fd4d4a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: N/A
 --- !u!114 &510282987288689883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1620,7 +1592,6 @@ GameObject:
   - component: {fileID: 510282987655585566}
   - component: {fileID: 510282987655585561}
   - component: {fileID: 510282987655585560}
-  - component: {fileID: 510282987655585563}
   m_Layer: 5
   m_Name: MainMenuButton
   m_TagString: Untagged
@@ -1792,19 +1763,6 @@ RectTransform:
   m_AnchoredPosition: {x: -350, y: 0}
   m_SizeDelta: {x: 200, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &510282987655585563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510282987655585557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3e474213152194196e351a3fd4d4a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: StartMenu
 --- !u!222 &510282987655585566
 CanvasRenderer:
   m_ObjectHideFlags: 0
