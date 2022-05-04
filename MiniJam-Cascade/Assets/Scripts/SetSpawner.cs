@@ -25,7 +25,7 @@ public class SetSpawner : MonoBehaviour
 
     public IEnumerator StartSpawner()
     {
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(60);
         Spawner.GetComponent<EnemySpawner>().enabled = true;
         CanThenStop = true;
         Debug.Log("StartSpawn");
