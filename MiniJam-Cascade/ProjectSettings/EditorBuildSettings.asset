@@ -20,7 +20,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/The scene - no post processing.unity
     guid: bc3a2531e5e1f0e44a954c399ab5e346
+  - enabled: 1
+    path: Assets/Scenes/The scene - no post processing.unity
+    guid: 6d717003fd91e4848ab9c7e1a1fdc55b
   m_configObjects: {}

@@ -7,12 +7,12 @@ public class PickupItem : MonoBehaviour
     public bool inRange;
     GameObject inventory;
     Inventory inventoryScript;
-    GameObject pressFText;
-    GameObject placeHolder;
-    GameObject TorchHolder;
-    GameObject inventoryCanvas;
-    GameObject hotbarSlots;
-    GameObject otherSlots;
+    public GameObject pressFText;
+    public GameObject handHolder;
+    public GameObject TorchHolder;
+    public GameObject inventoryCanvas;
+    public GameObject hotbarSlots;
+    public GameObject otherSlots;
     Slot slotScript;
     Letter letterScript;
     private string originialPressF;
@@ -21,17 +21,17 @@ public class PickupItem : MonoBehaviour
 
     private void Awake()
     {
-        inventoryCanvas = GameObject.Find("InventoryCanvas");
+        //inventoryCanvas = GameObject.Find("InventoryCanvas");
         inventory = GameObject.FindGameObjectWithTag("Player");
         inventoryScript = inventory.GetComponent<Inventory>(); 
-        pressFText = inventoryCanvas.transform.Find("PressFText").gameObject;
+        //pressFText = inventoryCanvas.transform.Find("PressFText").gameObject;
         itemName = gameObject.name;
         originialPressF = pressFText.GetComponent<TMP_Text>().text;
 
-        TorchHolder = GameObject.Find("TorchHolder");
-        placeHolder = GameObject.Find("HandHolder");
-        hotbarSlots = GameObject.Find("Slots");
-        otherSlots = GameObject.Find("Other Slots");
+        //TorchHolder = GameObject.Find("TorchHolder");
+        //handHolder = GameObject.Find("HandHolder");
+        //hotbarSlots = GameObject.Find("Slots");
+        //otherSlots = GameObject.Find("Other Slots");
         if(gameObject.tag == "Letter")
         {
             letterScript = gameObject.GetComponent<Letter>();
@@ -129,12 +129,12 @@ public class PickupItem : MonoBehaviour
             {
                 if (slotScript.slotItemPrefab != null)
                 {
-                    if (placeHolder.transform.childCount != 0)
+                    if (handHolder.transform.childCount != 0)
                     {
-                        Destroy(placeHolder.transform.GetChild(0).gameObject);
+                        Destroy(handHolder.transform.GetChild(0).gameObject);
                     }
 
-                    Instantiate(slotScript.slotItemPrefab, placeHolder.transform, false);
+                    Instantiate(slotScript.slotItemPrefab, handHolder.transform, false);
 
                     Destroy(gameObject);
                 } 

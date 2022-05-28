@@ -3,14 +3,14 @@ using UnityEngine;
 public class Letter : MonoBehaviour
 {
     public int pageNumber;
-    GameObject DiaryPages;
-    GameObject hotbar;
+    public GameObject DiaryPages;
+    public GameObject hotbar;
     GameManager gameManagerScript;
 
     private void Start()
     {
-        hotbar = GameObject.Find("Hotbar");
-        DiaryPages = GameObject.Find("DiaryPages");
+        //hotbar = GameObject.Find("Hotbar");
+        //DiaryPages = GameObject.Find("DiaryPages");
         gameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
