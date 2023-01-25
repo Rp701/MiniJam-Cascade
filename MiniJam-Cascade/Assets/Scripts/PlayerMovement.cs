@@ -3,7 +3,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //Variables
-    private float moveSpeed;
+    public static GameObject instance;
+    private float moveSpeed; 
     [Header("Movement")]
     public float walkSpeed;
     public float runSpeed;
@@ -23,8 +24,9 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController controller;
 
-    private void Start()
+    private void Awake()
     {
+        instance = gameObject;
         controller = GetComponent <CharacterController>();
     }
 

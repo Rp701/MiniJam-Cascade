@@ -97,6 +97,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inRange: 0
+  pressFText: {fileID: 0}
+  handHolder: {fileID: 0}
+  TorchHolder: {fileID: 0}
+  inventoryCanvas: {fileID: 0}
+  hotbarSlots: {fileID: 0}
+  otherSlots: {fileID: 0}
+  actionDescription: 'pick up the '
 --- !u!65 &-6555245487800180985
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.157
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0092518525, g: 0.007612218, b: 0.037581827, a: 0.157}
+  m_IndirectSpecularColor: {r: 0.009233752, g: 0.0075858845, b: 0.03751256, a: 0.157}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11386,6 +11386,10 @@ PrefabInstance:
       propertyPath: inventoryCanvas
       value: 
       objectReference: {fileID: 435541050}
+    - target: {fileID: -6843598676717598793, guid: 473b30836b1bafb45a7b36097cc785ac, type: 3}
+      propertyPath: actionDescription
+      value: 'pick up the '
+      objectReference: {fileID: 0}
     - target: {fileID: -5760383766438942686, guid: 473b30836b1bafb45a7b36097cc785ac, type: 3}
       propertyPath: m_Size.x
       value: 0.2
@@ -14803,6 +14807,10 @@ PrefabInstance:
       propertyPath: inventoryCanvas
       value: 
       objectReference: {fileID: 435541050}
+    - target: {fileID: -364314140780120261, guid: 85b9f9834b78d23428bd43b101e07927, type: 3}
+      propertyPath: actionDescription
+      value: 'pick up the '
+      objectReference: {fileID: 0}
     - target: {fileID: 4985875667742015314, guid: 85b9f9834b78d23428bd43b101e07927, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -15883,6 +15891,10 @@ PrefabInstance:
       propertyPath: inventoryCanvas
       value: 
       objectReference: {fileID: 435541050}
+    - target: {fileID: -4911936095035336934, guid: e279a37703fb557459649989c277672d, type: 3}
+      propertyPath: actionDescription
+      value: 'pick up the '
+      objectReference: {fileID: 0}
     - target: {fileID: 2560782644687026799, guid: e279a37703fb557459649989c277672d, type: 3}
       propertyPath: m_Name
       value: Drill
@@ -30538,6 +30550,10 @@ PrefabInstance:
       propertyPath: inventoryCanvas
       value: 
       objectReference: {fileID: 435541050}
+    - target: {fileID: 2049910635975963928, guid: 7e20f5a32223ed040ab726572be98f67, type: 3}
+      propertyPath: actionDescription
+      value: 'pick up the '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e20f5a32223ed040ab726572be98f67, type: 3}
 --- !u!1001 &839983241
@@ -38729,6 +38745,10 @@ PrefabInstance:
       propertyPath: inventoryCanvas
       value: 
       objectReference: {fileID: 435541050}
+    - target: {fileID: 4400239727457341427, guid: fd90e36b52ac1bc43b26b44fb1d6d321, type: 3}
+      propertyPath: actionDescription
+      value: 'pick up the '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd90e36b52ac1bc43b26b44fb1d6d321, type: 3}
 --- !u!1 &1076323612 stripped
@@ -42942,6 +42962,10 @@ PrefabInstance:
       propertyPath: inventoryCanvas
       value: 
       objectReference: {fileID: 435541050}
+    - target: {fileID: 4572153506478589185, guid: 01cb40741419a492f93b8a8b012f3701, type: 3}
+      propertyPath: actionDescription
+      value: 'read '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01cb40741419a492f93b8a8b012f3701, type: 3}
 --- !u!1001 &1199058304
@@ -47650,6 +47674,10 @@ PrefabInstance:
       propertyPath: inventoryCanvas
       value: 
       objectReference: {fileID: 435541050}
+    - target: {fileID: 4302303714840348785, guid: 5eb141c31f3b34a69901d686cd6f0a46, type: 3}
+      propertyPath: actionDescription
+      value: 'read '
+      objectReference: {fileID: 0}
     - target: {fileID: 4567767047615206677, guid: 5eb141c31f3b34a69901d686cd6f0a46, type: 3}
       propertyPath: hotbar
       value: 
@@ -56204,6 +56232,10 @@ PrefabInstance:
       propertyPath: inventoryCanvas
       value: 
       objectReference: {fileID: 435541050}
+    - target: {fileID: 4876683993353217567, guid: a24d1ea5791d0cb4f8f25ef268869e96, type: 3}
+      propertyPath: actionDescription
+      value: 'pick up the '
+      objectReference: {fileID: 0}
     - target: {fileID: 5330657681880087438, guid: a24d1ea5791d0cb4f8f25ef268869e96, type: 3}
       propertyPath: m_Name
       value: Shovel
@@ -72742,6 +72774,10 @@ PrefabInstance:
       propertyPath: inventoryCanvas
       value: 
       objectReference: {fileID: 435541050}
+    - target: {fileID: 5226446954677018740, guid: fc192a1fc02d544fdb06da7fd5160846, type: 3}
+      propertyPath: actionDescription
+      value: 'read '
+      objectReference: {fileID: 0}
     - target: {fileID: 5503183595336105232, guid: fc192a1fc02d544fdb06da7fd5160846, type: 3}
       propertyPath: hotbar
       value: 
@@ -74284,6 +74320,10 @@ PrefabInstance:
       propertyPath: EnemyKillYouText
       value: 
       objectReference: {fileID: 1117775108}
+    - target: {fileID: 4513873720229869563, guid: 40feb525a71632746b366270afebf79f, type: 3}
+      propertyPath: field of view
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 4513873720229869563, guid: 40feb525a71632746b366270afebf79f, type: 3}
       propertyPath: near clip plane
       value: 0.01
@@ -81679,6 +81719,10 @@ PrefabInstance:
       propertyPath: inventoryCanvas
       value: 
       objectReference: {fileID: 435541050}
+    - target: {fileID: 2721114732189704250, guid: 1d034139777d8435c898bc991b8a589f, type: 3}
+      propertyPath: actionDescription
+      value: 'pick up the '
+      objectReference: {fileID: 0}
     - target: {fileID: 3115943304961126512, guid: 1d034139777d8435c898bc991b8a589f, type: 3}
       propertyPath: m_RootOrder
       value: 9
