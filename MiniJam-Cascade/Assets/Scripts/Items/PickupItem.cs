@@ -10,7 +10,7 @@ public class PickupItem : MonoBehaviour
     public GameObject inventoryCanvas;
     public GameObject hotbarSlots;
     public GameObject otherSlots;
-    [SerializeField] private string actionDescription = "Pick up the ";
+    private string actionDescription = "Pick up the ";
     Slot slotScript;
     Letter letterScript;
     OtherSlot otherSlotScript;
@@ -20,9 +20,6 @@ public class PickupItem : MonoBehaviour
         inventoryCanvas = GameObject.Find("InventoryCanvas");
         pressFText = inventoryCanvas.transform.Find("PressFText").gameObject;
 
-        //TorchHolder = GameObject.Find("TorchHolder");
-        //handHolder = GameObject.Find("HandHolder");
-        //hotbarSlots = GameObject.Find("Slots");
         otherSlots = GameObject.Find("Other Slots");
         if (gameObject.tag == "Letter")
         {

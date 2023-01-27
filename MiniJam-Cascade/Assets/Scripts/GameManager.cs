@@ -6,9 +6,11 @@ public class GameManager : MonoBehaviour
 {
     public bool isPauseMenu;
     public bool isLetterOpen;
+    public static GameManager instance;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        instance = this;
         isPauseMenu = false;
         isLetterOpen = false;
     }

@@ -7,16 +7,16 @@ public class OtherSlot : MonoBehaviour
 {
     public string storedObject;
     public bool isStoring = false;
+    private GameObject hotbarSlots;
     GameObject lockIcon;
     Slot slotScript;
-    GameObject hotbarSlots;
     Inventory inventoryScript;
 
     private void Start()
     {
-        inventoryScript = GameObject.Find("FirstPersonPlayer").GetComponent<Inventory>();
+        inventoryScript = Inventory.instance;
         lockIcon = gameObject.transform.Find("Image").gameObject;
-        hotbarSlots = GameObject.Find("Slots");
+        hotbarSlots = Hotbar.hotbar;
     }
     public void SetCraftSlotObject(GameObject storingObject)
     {

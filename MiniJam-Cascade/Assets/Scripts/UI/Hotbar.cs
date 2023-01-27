@@ -6,12 +6,16 @@ public class Hotbar : MonoBehaviour
     public GameObject mainSlots;
     public GameObject otherSlots;
     Slot slotScript;
+    public static Hotbar instance;
+    public static GameObject hotbar;
 
     public GameObject itemHolder;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        instance = this;
+        hotbar = gameObject;
         itemHolder = GameObject.Find("HandHolder").gameObject;
 
         mainSlots = gameObject.transform.Find("Slots").gameObject;

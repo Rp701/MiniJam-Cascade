@@ -8,7 +8,6 @@ public class Slot : MonoBehaviour
     public bool isStoring = false;
     public GameObject slotItemPrefab;
     GameObject lockIcon;
-    Hotbar hotbarScript;
 
     private void Start()
     {
@@ -16,7 +15,6 @@ public class Slot : MonoBehaviour
         {
             gameObject.GetComponent<Image>().color = new Color32(63, 66, 64, 255);
             lockIcon = gameObject.transform.Find("Image").gameObject;
-            hotbarScript = GameObject.Find("Hotbar").GetComponent<Hotbar>();
         }
     }
 
@@ -35,7 +33,7 @@ public class Slot : MonoBehaviour
         isStoring = true;
         lockIcon.SetActive(false);
 
-        hotbarScript.SetItem(0);
+        Hotbar.instance.SetItem(0);
     }
 
 }
